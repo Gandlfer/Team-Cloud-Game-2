@@ -12,10 +12,10 @@ func _process(delta):
 
 
 func _on_area_2d_body_entered(body):
+	
 	if body.name == "CharacterBody2D" and body.groundSlamming:
-		print("true")
 		$GPUParticles2D.emitting=true
 		$Area2D.queue_free()
 		$CollisionShape2D.queue_free()
 		$Sprite2D.queue_free()
-	pass # Replace with function body.
+

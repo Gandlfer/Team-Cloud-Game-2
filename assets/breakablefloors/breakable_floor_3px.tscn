@@ -8,7 +8,7 @@
 size = Vector2(134, 67)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uams2"]
-size = Vector2(135.5, 225)
+size = Vector2(132.5, 63)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_344xk"]
 particles_animation = true
@@ -37,7 +37,7 @@ texture = ExtResource("2_d4n5q")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.25, -146.5)
+position = Vector2(0, -69)
 shape = SubResource("RectangleShape2D_uams2")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]

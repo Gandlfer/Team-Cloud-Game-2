@@ -18,7 +18,7 @@ var dashing = false
 var dashDirection = 1
 var isLeft = false
 
-var groundSlamming = false
+@export var groundSlamming = false
 
 
 func _physics_process(delta):
@@ -92,7 +92,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
 		isLeft = velocity.x < 0
 	sprite_2d.flip_h = isLeft
-
+	
 # dash duration timer
 func _on_dash_timer_timeout():
 	dashing = false
@@ -100,3 +100,4 @@ func _on_dash_timer_timeout():
 # dash cooldown timer, so you can't spam dash on the ground
 func _on_dash_cooldown_timeout():
 	dashOnCooldown = false
+

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cksexruq2ieme"]
+
+[ext_resource type="Script" path="res://assets/EggofHarmony/ExitEgg.gd" id="1_jfvak"]
+[ext_resource type="Texture2D" uid="uid://77rsrrpd4seu" path="res://assets/breakablefloors/breakables image/elementWood049.png" id="1_tmrl8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0bs5c"]
+radius = 79.0
+height = 158.0
+
+[node name="Egg and Exit" type="StaticBody2D"]
+script = ExtResource("1_jfvak")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_0bs5c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.38419e-07, -1.19209e-07)
+scale = Vector2(0.807143, 0.835714)
+texture = ExtResource("1_tmrl8")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

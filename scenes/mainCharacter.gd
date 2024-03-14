@@ -28,9 +28,9 @@ func _physics_process(delta):
 	
 	# animations
 	if (velocity.x > 1 || velocity.x < -1):
-		sprite_2d.animation = "run"
+		sprite_2d.animation = "run_puffel"
 	else:
-		sprite_2d.animation = "default"
+		sprite_2d.animation = "default_puffel"
 	
 	# floor checks
 	if is_on_floor():
@@ -40,7 +40,7 @@ func _physics_process(delta):
 	if not is_on_floor():
 		if(!groundSlamming):
 			velocity.y += gravity * delta
-		sprite_2d.animation = "jump"
+		sprite_2d.animation = "jump_puffel"
 		
 	# handles inputs for jump and double jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():

@@ -2,10 +2,13 @@ extends CharacterBody2D
 
 @onready var sprite_2d = $Sprite2D
 
+@onready var gunSignal = get_node("Gun")
+
 const SPEED = 600.0
 const DASH_SPEED = 3800
 const GROUND_SLAM_SPEED = 4000
 const JUMP_VELOCITY = -1300.0
+const GUN_VELOCITY = 2000.0
 const GRAVITY = 5500
 
 var gravity = GRAVITY
@@ -21,6 +24,12 @@ var isLeft = false
 
 @export var damaged = false
 @export var groundSlamming = false
+
+func _ready():
+	gunSignal.gunShotDown.connect(_gun_shoot_down)
+	gunSignal.gunShotUp.connect(_gun_shoot_up)
+	gunSignal.gunShotLeft.connect(_gun_shoot_left)
+	gunSignal.gunShotRight.connect(_gun_shoot_right)
 
 
 func _physics_process(delta):
@@ -123,3 +132,14 @@ func flicker():
 	#print("Done")
 	damaged = false
 	isDamage=false
+
+func _gun_shoot_down():
+	velocity.y -= GUN_VELOCITY
+func _gun_shoot_up():
+	velocity.y += GUN_VELOCITY
+func _gun_shoot_left():
+	print("left sig recieved")
+	velocity.x -= GUN_VELOCITY
+func _gun_shoot_right():
+	print("right sig recieved")
+	velocity.x += GUN_VELOCITY

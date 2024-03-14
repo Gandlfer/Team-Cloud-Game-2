@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://df605ruyjkkwy"]
 
-[ext_resource type="Texture2D" uid="uid://bty42fcjrubi7" path="res://Green.png" id="1_7uaw6"]
-[ext_resource type="Texture2D" uid="uid://v2ha7c1ogpp7" path="res://Terrain (16x16).png" id="2_et6cb"]
+[ext_resource type="Texture2D" uid="uid://crqadtecmely8" path="res://Green.png" id="1_7uaw6"]
+[ext_resource type="Texture2D" uid="uid://b3betcfv7amja" path="res://Terrain (16x16).png" id="2_et6cb"]
 [ext_resource type="PackedScene" uid="uid://u062saf35tmu" path="res://scenes/mainCharacter.tscn" id="3_0whxe"]
-[ext_resource type="Texture2D" uid="uid://d5x4wovw38b2" path="res://BigGun.webp" id="4_s7qte"]
+[ext_resource type="Texture2D" uid="uid://brof7eii3oudh" path="res://BigGun.webp" id="4_s7qte"]
 [ext_resource type="Script" path="res://Gun.gd" id="5_gai87"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82jjl"]
@@ -617,8 +617,7 @@ wait_time = 0.09
 wait_time = 0.2
 
 [node name="Gun" type="Sprite2D" parent="Puffel"]
-process_mode = 3
-position = Vector2(22, 0)
+position = Vector2(25, 0)
 scale = Vector2(0.02, 0.02)
 texture = ExtResource("4_s7qte")
 script = ExtResource("5_gai87")

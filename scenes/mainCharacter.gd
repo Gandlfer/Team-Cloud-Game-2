@@ -14,14 +14,18 @@ var canDoubleJump = false
 var dashOnCooldown = false
 var canDash = true
 var dashing = false
+var isDamage = false
 
 var dashDirection = 1
 var isLeft = false
 
+@export var damaged = false
 @export var groundSlamming = false
 
 
 func _physics_process(delta):
+	
+	
 	# animations
 	if (velocity.x > 1 || velocity.x < -1):
 		sprite_2d.animation = "run"
@@ -93,6 +97,12 @@ func _physics_process(delta):
 		isLeft = velocity.x < 0
 	sprite_2d.flip_h = isLeft
 	
+	if(damaged and !isDamage):
+		isDamage= true
+		print("Damaged here")
+		flicker()
+		
+	
 # dash duration timer
 func _on_dash_timer_timeout():
 	dashing = false
@@ -101,3 +111,13 @@ func _on_dash_timer_timeout():
 func _on_dash_cooldown_timeout():
 	dashOnCooldown = false
 
+func flicker():
+	for x in 3:
+		$Sprite2D.visible = false
+		print("flicker")
+		await get_tree().create_timer(0.1).timeout
+		$Sprite2D.visible = true
+		await get_tree().create_timer(0.1).timeout
+	print("Done")
+	damaged = false
+	isDamage=false

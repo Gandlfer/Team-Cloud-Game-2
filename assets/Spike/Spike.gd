@@ -16,7 +16,7 @@ func _on_area_2d_body_entered(body):
 		print("Damaged")
 		body.damaged=true
 		await get_tree().create_timer(1).timeout
-		print(body.damaged)
+		#print(body.damaged)
 		for x in $Area2D.get_overlapping_bodies():
 			_on_area_2d_body_entered(x)
 		

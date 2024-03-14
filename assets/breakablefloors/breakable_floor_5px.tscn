@@ -24,7 +24,7 @@ initial_velocity_max = 200.0
 gravity = Vector3(0, 500, 0)
 anim_offset_max = 1.0
 
-[node name="Breakable floor 3px" type="StaticBody2D"]
+[node name="Breakable floor 5px" type="StaticBody2D"]
 script = ExtResource("1_ybah2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

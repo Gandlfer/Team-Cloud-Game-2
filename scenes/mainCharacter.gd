@@ -99,8 +99,10 @@ func _physics_process(delta):
 	
 	if(damaged and !isDamage):
 		isDamage= true
-		print("Damaged here")
 		flicker()
+		#print("Damaged here")
+		velocity.y = -750 # bounce upwards when damage
+		
 		
 	
 # dash duration timer
@@ -114,10 +116,10 @@ func _on_dash_cooldown_timeout():
 func flicker():
 	for x in 3:
 		$Sprite2D.visible = false
-		print("flicker")
+		#print("flicker")
 		await get_tree().create_timer(0.1).timeout
 		$Sprite2D.visible = true
 		await get_tree().create_timer(0.1).timeout
-	print("Done")
+	#print("Done")
 	damaged = false
 	isDamage=false

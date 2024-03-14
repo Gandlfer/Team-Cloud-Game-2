@@ -484,5 +484,8 @@ wait_time = 0.2
 [node name="StaticBody2D" parent="." instance=ExtResource("3_8hv7c")]
 position = Vector2(224, -8)
 
+[node name="StaticBody2D2" parent="." instance=ExtResource("3_8hv7c")]
+position = Vector2(312, -8)
+
 [connection signal="timeout" from="CharacterBody2D/DashTimer" to="CharacterBody2D" method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="CharacterBody2D/DashCooldown" to="CharacterBody2D" method="_on_dash_cooldown_timeout"]

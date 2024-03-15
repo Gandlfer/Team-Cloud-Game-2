@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var sprite_2d = $Sprite2D
 
-@onready var gunSignal = get_node("Gun")
+# @onready var gunSignal = get_node("Gun")
 
 const SPEED = 600.0
 const DASH_SPEED = 3800
@@ -26,10 +26,11 @@ var isLeft = false
 @export var groundSlamming = false
 
 func _ready():
-	gunSignal.gunShotDown.connect(_gun_shoot_down)
-	gunSignal.gunShotUp.connect(_gun_shoot_up)
-	gunSignal.gunShotLeft.connect(_gun_shoot_left)
-	gunSignal.gunShotRight.connect(_gun_shoot_right)
+	# gunSignal.gunShotDown.connect(_gun_shoot_down)
+	# gunSignal.gunShotUp.connect(_gun_shoot_up)
+	# gunSignal.gunShotLeft.connect(_gun_shoot_left)
+	# gunSignal.gunShotRight.connect(_gun_shoot_right)
+	pass
 
 
 func _physics_process(delta):

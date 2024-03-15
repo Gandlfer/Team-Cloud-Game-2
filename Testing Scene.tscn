@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bkcrpvvqapgi4"]
 
-[ext_resource type="Texture2D" uid="uid://v2ha7c1ogpp7" path="res://Terrain (16x16).png" id="1_8wleb"]
+[ext_resource type="Texture2D" uid="uid://b3betcfv7amja" path="res://Terrain (16x16).png" id="1_8wleb"]
 [ext_resource type="PackedScene" uid="uid://u062saf35tmu" path="res://scenes/mainCharacter.tscn" id="2_gjt38"]
-[ext_resource type="PackedScene" uid="uid://480728mi3flq" path="res://assets/Spike/Spike.tscn" id="3_8hv7c"]
+[ext_resource type="PackedScene" uid="uid://480728mi3flq" path="res://assets/Spike/Upward Spike.tscn" id="3_8hv7c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_majmj"]
 texture = ExtResource("1_8wleb")

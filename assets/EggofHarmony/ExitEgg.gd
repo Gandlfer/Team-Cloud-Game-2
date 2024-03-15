@@ -17,4 +17,4 @@ func _on_area_2d_body_entered(body):
 		# unlock powers
 		print("Next Scene")
 		$Area2D.queue_free()
-		$Sprite2D.queue_free()
+		$AnimatedSprite2D.queue_free()

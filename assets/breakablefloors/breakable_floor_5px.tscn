@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://4408l5f5cyxb" path="res://assets/breakablefloors/breakables image/elementWood047.png" id="2_tuuck"]
 [ext_resource type="Texture2D" uid="uid://bttcsblmlxfyo" path="res://assets/breakablefloors/breakables image/breakparticles.png" id="3_ujp5u"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2a4ow"]
-size = Vector2(216, 67)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gnyy5"]
+radius = 34.5
+height = 218.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uams2"]
 size = Vector2(216, 63)
@@ -29,7 +30,8 @@ script = ExtResource("1_ybah2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_2a4ow")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_gnyy5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_tuuck")

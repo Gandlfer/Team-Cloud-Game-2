@@ -605,6 +605,10 @@ position = Vector2(-144, 144)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(0.75, 0.75)
+limit_left = -280
+limit_top = -280
+limit_right = 3550
+limit_bottom = 3250
 editor_draw_limits = true
 
 [node name="DashTimer" type="Timer" parent="CharacterBody2D"]
@@ -712,6 +716,24 @@ offset_right = 16.0
 offset_bottom = 112.0
 text = "A key to move left
 D key to move right"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 2744.0
+offset_top = -24.0
+offset_right = 3272.0
+offset_bottom = 64.0
+text = "While in the air, Press S + J (GroundSlam) to break obstacles"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 1736.0
+offset_top = 816.0
+offset_right = 2472.0
+offset_bottom = 904.0
+text = "Touching spikes will deal damage to Puffels!"
 horizontal_alignment = 1
 vertical_alignment = 1
 

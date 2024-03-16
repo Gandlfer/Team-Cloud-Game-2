@@ -1,19 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpehf7420wggx"]
+[gd_scene load_steps=4 format=3 uid="uid://brgfye0am53yk"]
 
-[ext_resource type="Script" path="res://assets/Hats/Hats.gd" id="1_vtd7v"]
-[ext_resource type="Texture2D" uid="uid://csssl45j474wg" path="res://assets/Hats/HatsImage/wizard.png" id="2_0jn13"]
+[ext_resource type="Script" path="res://assets/Hats/Hats.gd" id="1_dier7"]
+[ext_resource type="Texture2D" uid="uid://osghsbppsoko" path="res://assets/Hats/HatsImage/flowerpot.png" id="2_sr835"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hw5sw"]
 radius = 32.0
 height = 64.0
 
-[node name="Hats1" type="StaticBody2D"]
-script = ExtResource("1_vtd7v")
+[node name="Hats2" type="StaticBody2D"]
+script = ExtResource("1_dier7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-32, 56)
+position = Vector2(72, 56)
 scale = Vector2(0.1, 0.129)
-texture = ExtResource("2_0jn13")
+texture = ExtResource("2_sr835")
 
 [node name="Area2D" type="Area2D" parent="."]
 

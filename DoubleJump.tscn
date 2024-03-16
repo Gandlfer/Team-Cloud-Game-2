@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bctfimppku214"]
+[gd_scene load_steps=14 format=3 uid="uid://bctfimppku214"]
 
 [ext_resource type="Texture2D" uid="uid://v2ha7c1ogpp7" path="res://Terrain (16x16).png" id="1_q1o17"]
 [ext_resource type="PackedScene" uid="uid://u062saf35tmu" path="res://scenes/mainCharacter.tscn" id="2_rokyu"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://un8wl533fc38" path="res://Background/Purple.png" id="8_hgfsb"]
 [ext_resource type="PackedScene" uid="uid://htt6n4uvaty7" path="res://assets/Hats/Cowboy.tscn" id="9_scrk2"]
 [ext_resource type="PackedScene" uid="uid://cpehf7420wggx" path="res://assets/Hats/Wizard.tscn" id="10_87osg"]
+[ext_resource type="PackedScene" uid="uid://brgfye0am53yk" path="res://assets/Hats/Flowerpot.tscn" id="11_rqpov"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yth6d"]
 texture = ExtResource("1_q1o17")
@@ -787,6 +788,9 @@ position = Vector2(432, 2712)
 
 [node name="Hats1" parent="." instance=ExtResource("10_87osg")]
 position = Vector2(1208, 3664)
+
+[node name="Hats2" parent="." instance=ExtResource("11_rqpov")]
+position = Vector2(3392, 4128)
 
 [connection signal="timeout" from="CharacterBody2D/DashTimer" to="CharacterBody2D" method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="CharacterBody2D/DashCooldown" to="CharacterBody2D" method="_on_dash_cooldown_timeout"]

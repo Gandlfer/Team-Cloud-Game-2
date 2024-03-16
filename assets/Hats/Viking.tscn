@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dblo0dag0t15i"]
+
+[ext_resource type="Script" path="res://assets/Hats/Hats.gd" id="1_rmlbm"]
+[ext_resource type="Texture2D" uid="uid://cyqqtxi45sf15" path="res://assets/Hats/HatsImage/viking.png" id="2_ncjv5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hw5sw"]
+radius = 32.0
+height = 64.0
+
+[node name="Hats4" type="StaticBody2D"]
+script = ExtResource("1_rmlbm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-8, 8)
+scale = Vector2(0.1, 0.129)
+texture = ExtResource("2_ncjv5")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-24, -24)
+shape = SubResource("CapsuleShape2D_hw5sw")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

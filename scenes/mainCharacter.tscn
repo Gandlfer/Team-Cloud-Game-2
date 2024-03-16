@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://q1kyj12pg1fr" path="res://scenes/PuffelImages/Jump_32x32.png" id="5_akebq"]
 [ext_resource type="Texture2D" uid="uid://hg7vwppkkwrd" path="res://scenes/idle.PNG" id="6_b5ahm"]
 [ext_resource type="Texture2D" uid="uid://b7x3n33rrs8ii" path="res://scenes/PuffelImages/Run_32x32.png" id="7_5t38n"]
-[ext_resource type="Texture2D" uid="uid://teh44dftas3g" path="res://assets/Untitled_Artwork.png" id="8_2uy44"]
-[ext_resource type="Texture2D" uid="uid://csssl45j474wg" path="res://assets/Untitled_Artwork2.png" id="9_xm83r"]
+[ext_resource type="Texture2D" uid="uid://teh44dftas3g" path="res://assets/Hats/HatsImage/Untitled_Artwork.png" id="9_q7cep"]
+[ext_resource type="Texture2D" uid="uid://csssl45j474wg" path="res://assets/Hats/HatsImage/Untitled_Artwork2.png" id="10_ibdbh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r2mva"]
 atlas = ExtResource("2_ufnqp")
@@ -466,20 +466,19 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_5enng")
 animation = &"new_animation"
 autoplay = "new_animation"
-frame_progress = 0.443826
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.666667, 5.33333)
 shape = SubResource("RectangleShape2D_y36t6")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="Hats0" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(68, 11.3333)
 scale = Vector2(0.0767747, 0.0716049)
-texture = ExtResource("8_2uy44")
+texture = ExtResource("9_q7cep")
 
-[node name="Sprite2D3" type="Sprite2D" parent="."]
+[node name="Hats1" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-6.66667, 38)
 scale = Vector2(0.0888503, 0.0823303)
-texture = ExtResource("9_xm83r")
+texture = ExtResource("10_ibdbh")

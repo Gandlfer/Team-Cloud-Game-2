@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var sprite_2d = $Sprite2D
+var save_path="res://Saved//data.json"
 
 # @onready var gunSignal = get_node("Gun")
 
@@ -22,10 +23,14 @@ var isDamage = false
 var dashDirection = 1
 var isLeft = false
 
+var hatNode = "Hats%d"
+@export var hats=[]
+@export var currenthat=-1
 @export var damaged = false
 @export var groundSlamming = false
 
 func _ready():
+	load_data()
 	# gunSignal.gunShotDown.connect(_gun_shoot_down)
 	# gunSignal.gunShotUp.connect(_gun_shoot_up)
 	# gunSignal.gunShotLeft.connect(_gun_shoot_left)
@@ -40,7 +45,7 @@ func _physics_process(delta):
 	if (velocity.x > 1 || velocity.x < -1):
 		sprite_2d.animation = "run_puffel"
 	else:
-		sprite_2d.animation = "default_puffel"
+		sprite_2d.animation = "new_animation"
 	
 	# floor checks
 	if is_on_floor():
@@ -113,7 +118,7 @@ func _physics_process(delta):
 		#print("Damaged here")
 		velocity.y = -750 # bounce upwards when damage
 		
-		
+	
 	
 # dash duration timer
 func _on_dash_timer_timeout():
@@ -144,3 +149,41 @@ func _gun_shoot_left():
 func _gun_shoot_right():
 	print("right sig recieved")
 	velocity.x += GUN_VELOCITY
+
+func save():
+	var file = FileAccess.open(save_path,FileAccess.WRITE)
+	file.store_string(JSON.new().stringify(hats))
+	file.close()
+	
+func load_data():
+	if FileAccess.file_exists(save_path):
+		var file =FileAccess.open(save_path,FileAccess.READ)
+		hats = str_to_var(file.get_as_text())
+		file.close()
+	else:
+		print("No saved.")
+		
+func _on_left_pressed():
+	if hats.size()!=0:
+		if currenthat==-1:
+			currenthat=hats.size()-1
+		else:
+			get_node(hatNode % currenthat).visible=false
+			if currenthat==0:
+				currenthat=hats.size()-1
+			else:
+				currenthat-=1
+		get_node(hatNode % currenthat).visible=true
+
+
+func _on_right_pressed():
+	if hats.size()!=0:
+		if currenthat==-1:
+			currenthat=0
+		else:
+			get_node(hatNode % currenthat).visible=false
+			if currenthat==hats.size()-1:
+				currenthat=0
+			else:
+				currenthat+=1
+		get_node(hatNode % currenthat).visible=true

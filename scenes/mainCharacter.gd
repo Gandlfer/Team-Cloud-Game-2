@@ -23,6 +23,8 @@ var dashDirection = 1
 var isLeft = false
 
 var hatNode = "Hats%d"
+@export var dash = false
+
 @export var hats=[]
 @export var currenthat=-1
 @export var damaged = false
@@ -31,6 +33,12 @@ var hatNode = "Hats%d"
 
 func _ready():
 	load_data()
+	#print(get_parent().name)
+	if get_parent().name == "DoubleJumpLevel":
+		#print("true")
+		dash = false
+	else:
+		dash = true
 	# gunSignal.gunShotDown.connect(_gun_shoot_down)
 	# gunSignal.gunShotUp.connect(_gun_shoot_up)
 	# gunSignal.gunShotLeft.connect(_gun_shoot_left)
@@ -80,7 +88,7 @@ func _physics_process(delta):
 		groundSlamming = true
 	
 	#handles input for dash
-	if Input.is_action_pressed("dash") and canDash:
+	if Input.is_action_pressed("dash") and canDash and dash:
 		dashing = true
 		dashOnCooldown = true
 		canDash = false

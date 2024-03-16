@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-
+@export var target_level : PackedScene
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -18,3 +18,4 @@ func _on_area_2d_body_entered(body):
 		print("Next Scene")
 		$Area2D.queue_free()
 		$AnimatedSprite2D.queue_free()
+		get_tree().change_scene_to_packed(target_level)

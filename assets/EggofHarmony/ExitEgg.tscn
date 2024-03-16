@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cksexruq2ieme"]
 
 [ext_resource type="Script" path="res://assets/EggofHarmony/ExitEgg.gd" id="1_jfvak"]
-[ext_resource type="Texture2D" uid="uid://b75v0uwv0wq2n" path="res://assets/EggofHarmony/Egg_Ani_32x32.png" id="2_do5l4"]
+[ext_resource type="Texture2D" uid="uid://dsrr8pk8o1mt0" path="res://assets/EggofHarmony/Egg_Ani_32x32.png" id="2_do5l4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0bs5c"]
 radius = 32.0

@@ -16,7 +16,6 @@ var canDoubleJump = false
 
 var dashOnCooldown = false
 var canDash = true
-var dashing = false
 var isDamage = false
 
 var dashDirection = 1
@@ -24,6 +23,7 @@ var isLeft = false
 
 @export var damaged = false
 @export var groundSlamming = false
+@export var dashing = false
 
 func _ready():
 	# gunSignal.gunShotDown.connect(_gun_shoot_down)
@@ -75,7 +75,7 @@ func _physics_process(delta):
 		groundSlamming = true
 	
 	#handles input for dash
-	if Input.is_action_just_pressed("dash") and canDash:
+	if Input.is_action_pressed("dash") and canDash:
 		dashing = true
 		dashOnCooldown = true
 		canDash = false

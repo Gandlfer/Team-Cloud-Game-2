@@ -63,19 +63,21 @@ script = ExtResource("1_6n8vn")
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_0a5t7")
 autoplay = "default"
-frame_progress = 0.010828
+frame_progress = 0.208391
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 texture_filter = 1
 shape = SubResource("CircleShape2D_cf5n0")
 
 [node name="Area2D2" type="Area2D" parent="."]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(0, -51)
 shape = SubResource("RectangleShape2D_wcgqp")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_xo61l")

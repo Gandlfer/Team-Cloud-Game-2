@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://brgfye0am53yk"]
 
 [ext_resource type="Script" path="res://scenes/items/Hats/Hats.gd" id="1_dier7"]
-[ext_resource type="Texture2D" uid="uid://c32xfjd0tnl8n" path="res://assets/HatsImage/flowerpot.png" id="2_sr835"]
+[ext_resource type="Texture2D" uid="uid://bimyldou5s835" path="res://assets/HatsImage/flowerpot.png" id="2_sr835"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hw5sw"]
 radius = 32.0

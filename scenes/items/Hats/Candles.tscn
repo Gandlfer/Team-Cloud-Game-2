@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d2vhvetcl3yav"]
 
 [ext_resource type="Script" path="res://scenes/items/Hats/Hats.gd" id="1_n1ips"]
-[ext_resource type="Texture2D" uid="uid://ss4vp74bgy2q" path="res://assets/HatsImage/candles.png" id="2_1hccj"]
+[ext_resource type="Texture2D" uid="uid://b7ihqovr4d2nq" path="res://assets/HatsImage/candles.png" id="2_1hccj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hw5sw"]
 radius = 32.0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dblo0dag0t15i"]
 
 [ext_resource type="Script" path="res://scenes/items/Hats/Hats.gd" id="1_rmlbm"]
-[ext_resource type="Texture2D" uid="uid://bv286fepvl364" path="res://assets/HatsImage/viking.png" id="2_ncjv5"]
+[ext_resource type="Texture2D" uid="uid://byac51cbqc2e1" path="res://assets/HatsImage/viking.png" id="2_ncjv5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hw5sw"]
 radius = 32.0

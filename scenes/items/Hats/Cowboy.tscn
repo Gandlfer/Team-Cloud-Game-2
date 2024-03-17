@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://htt6n4uvaty7"]
 
 [ext_resource type="Script" path="res://scenes/items/Hats/Hats.gd" id="1_l7w43"]
-[ext_resource type="Texture2D" uid="uid://qphf7bnrw5cx" path="res://assets/HatsImage/cowboy.png" id="2_881fi"]
+[ext_resource type="Texture2D" uid="uid://cf1nhu2uygrsj" path="res://assets/HatsImage/cowboy.png" id="2_881fi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hw5sw"]
 radius = 24.0

@@ -23,7 +23,7 @@ func _process(delta):
 
 
 func _on_area_2d_body_entered(body):
-	if body.name == "CharacterBody2D":
+	if body.is_in_group("Player"):
 		print(body.hats)
 		body.hats.append(num)
 		print(body.hats)

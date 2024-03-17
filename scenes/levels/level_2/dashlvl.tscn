@@ -1,7 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://cgnqlxirfrwdw"]
+[gd_scene load_steps=16 format=3 uid="uid://cgnqlxirfrwdw"]
 
-[ext_resource type="Texture2D" uid="uid://ba7omu1ncqpmy" path="res://assets/Background/Green.png" id="1_16css"]
-[ext_resource type="Texture2D" uid="uid://56v6yplo5xvc" path="res://assets/Terrain (16x16).png" id="2_ddulu"]
+[ext_resource type="Texture2D" uid="uid://dexuylq61ytqh" path="res://assets/Background/Green.png" id="1_16css"]
+[ext_resource type="Texture2D" uid="uid://dix7ci51fwjlj" path="res://assets/Terrain (16x16).png" id="2_ddulu"]
 [ext_resource type="PackedScene" uid="uid://bjgas28ytv7k" path="res://scenes/characters/player/player_spawner.tscn" id="3_cww7j"]
 [ext_resource type="PackedScene" uid="uid://cksexruq2ieme" path="res://scenes/items/EggofHarmony/ExitEgg.tscn" id="6_e1315"]
 [ext_resource type="PackedScene" uid="uid://480728mi3flq" path="res://scenes/items/Spike/Upward Spike.tscn" id="7_4k6nd"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://d2vhvetcl3yav" path="res://scenes/items/Hats/Candles.tscn" id="10_vm6mh"]
 [ext_resource type="PackedScene" uid="uid://dblo0dag0t15i" path="res://scenes/items/Hats/Viking.tscn" id="11_v48ee"]
 [ext_resource type="PackedScene" uid="uid://ghbltn2cidpa" path="res://scenes/items/Hats/Mask.tscn" id="12_7obm3"]
-[ext_resource type="PackedScene" uid="uid://c5u4l3l3vaabo" path="res://scenes/characters/flying enemy/Enemy.tscn" id="13_px3gb"]
 [ext_resource type="PackedScene" uid="uid://dmnuchgorjev5" path="res://scenes/characters/slime/slime.tscn" id="14_fwvky"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82jjl"]
@@ -607,6 +606,7 @@ stretch_mode = 1
 visible = false
 
 [node name="PlayerSpawner" parent="." instance=ExtResource("3_cww7j")]
+process_priority = 1
 position = Vector2(193, -2511)
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -673,23 +673,11 @@ position = Vector2(2291, -2594)
 [node name="Hats3" parent="." instance=ExtResource("12_7obm3")]
 position = Vector2(3780, -2690)
 
-[node name="Enemy" parent="." instance=ExtResource("13_px3gb")]
-position = Vector2(898, 390)
-
 [node name="Slime" parent="." instance=ExtResource("14_fwvky")]
 position = Vector2(1685, -1457)
 
-[node name="Enemy2" parent="." instance=ExtResource("13_px3gb")]
-position = Vector2(3340, -1952)
-
-[node name="Enemy3" parent="." instance=ExtResource("13_px3gb")]
-position = Vector2(1786, -1960)
-
 [node name="Slime2" parent="." instance=ExtResource("14_fwvky")]
 position = Vector2(2158, -1362)
-
-[node name="Enemy4" parent="." instance=ExtResource("13_px3gb")]
-position = Vector2(1640, 83)
 
 [node name="Slime3" parent="." instance=ExtResource("14_fwvky")]
 position = Vector2(2620, 128)

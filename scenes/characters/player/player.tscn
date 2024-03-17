@@ -1,11 +1,15 @@
-[gd_scene load_steps=33 format=3 uid="uid://u062saf35tmu"]
+[gd_scene load_steps=37 format=3 uid="uid://u062saf35tmu"]
 
 [ext_resource type="Script" path="res://scenes/characters/player/player.gd" id="1_sh5fx"]
-[ext_resource type="Texture2D" uid="uid://8ywjkj8s2lg8" path="res://assets/PuffelImages/Jump_32x32.png" id="5_akebq"]
-[ext_resource type="Texture2D" uid="uid://c7on5m1gy0e5b" path="res://assets/PuffelImages/idle.PNG" id="6_b5ahm"]
-[ext_resource type="Texture2D" uid="uid://dxy8nx0v61hgc" path="res://assets/PuffelImages/Run_32x32.png" id="7_5t38n"]
-[ext_resource type="Texture2D" uid="uid://qphf7bnrw5cx" path="res://assets/HatsImage/cowboy.png" id="9_q7cep"]
-[ext_resource type="Texture2D" uid="uid://bgr0g7skawx58" path="res://assets/HatsImage/wizard.png" id="10_tegue"]
+[ext_resource type="Texture2D" uid="uid://cj48h5hvgngfh" path="res://assets/PuffelImages/Jump_32x32.png" id="5_akebq"]
+[ext_resource type="Texture2D" uid="uid://b717d0vfqwlc0" path="res://assets/PuffelImages/idle.PNG" id="6_b5ahm"]
+[ext_resource type="Texture2D" uid="uid://bbcf7ik7alfsa" path="res://assets/PuffelImages/Run_32x32.png" id="7_5t38n"]
+[ext_resource type="AudioStream" uid="uid://cpk454svyq2qp" path="res://sounds/cartoon-jump-6462.mp3" id="7_abv7t"]
+[ext_resource type="AudioStream" uid="uid://21xm6rvojvc3" path="res://sounds/little-whoosh-2-6301.mp3" id="8_mcy27"]
+[ext_resource type="AudioStream" uid="uid://cf550b23qra3r" path="res://sounds/whoosh-6316.mp3" id="9_c8ymi"]
+[ext_resource type="Texture2D" uid="uid://dpmi7hdtbxvsu" path="res://assets/HatsImage/cowboy.png" id="9_q7cep"]
+[ext_resource type="AudioStream" uid="uid://h236pugefcy7" path="res://sounds/malegrunt3-99409.mp3" id="10_0ve0m"]
+[ext_resource type="Texture2D" uid="uid://c5gw54ryd5ff" path="res://assets/HatsImage/wizard.png" id="10_tegue"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q6bfs"]
 atlas = ExtResource("6_b5ahm")
@@ -238,6 +242,21 @@ wait_time = 0.09
 wait_time = 3.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="SoundJump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_abv7t")
+
+[node name="SoundDash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_mcy27")
+volume_db = 3.714
+pitch_scale = 1.95
+
+[node name="SoundGroundSlam" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_c8ymi")
+pitch_scale = 0.76
+
+[node name="SoundDamage" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_0ve0m")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

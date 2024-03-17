@@ -72,7 +72,6 @@ func _physics_process(delta):
 	elif Input.is_action_just_pressed("jump") and !is_on_floor() and canDoubleJump:
 		canDoubleJump = false
 		velocity.y = JUMP_VELOCITY
-		$SoundJump.play()
 	
 	# when you release jump your y vel is divided by 3 so you can control your jump height
 	if Input.is_action_just_released("jump") and velocity.y < 0:

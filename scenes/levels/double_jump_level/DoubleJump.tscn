@@ -1,6 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://bctfimppku214"]
+[gd_scene load_steps=17 format=3 uid="uid://bctfimppku214"]
 
-[ext_resource type="Texture2D" uid="uid://cwjuuvo11sb2x" path="res://assets/Terrain (16x16).png" id="1_q1o17"]
+[ext_resource type="Texture2D" uid="uid://dix7ci51fwjlj" path="res://assets/Terrain (16x16).png" id="1_q1o17"]
 [ext_resource type="PackedScene" uid="uid://u062saf35tmu" path="res://scenes/characters/player/player.tscn" id="2_rokyu"]
 [ext_resource type="PackedScene" uid="uid://bbaksqp8o1ng4" path="res://scenes/items/breakablefloors/breakable_floor_3px.tscn" id="3_grck6"]
 [ext_resource type="PackedScene" uid="uid://cksexruq2ieme" path="res://scenes/items/EggofHarmony/ExitEgg.tscn" id="4_4appf"]
@@ -8,11 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://480728mi3flq" path="res://scenes/items/Spike/Upward Spike.tscn" id="5_s0dhn"]
 [ext_resource type="PackedScene" uid="uid://x8spoxjs2tkx" path="res://scenes/items/Spike/Downward Spike.tscn" id="6_i6lv1"]
 [ext_resource type="PackedScene" uid="uid://cgnqlxirfrwdw" path="res://scenes/levels/dash_level/dashlvl.tscn" id="8_a2a8a"]
-[ext_resource type="Texture2D" uid="uid://drxlbmbey7s2d" path="res://assets/Background/Purple.png" id="8_hgfsb"]
+[ext_resource type="Texture2D" uid="uid://drr1fvgyttdja" path="res://assets/Background/Purple.png" id="8_hgfsb"]
 [ext_resource type="PackedScene" uid="uid://htt6n4uvaty7" path="res://scenes/items/Hats/Cowboy.tscn" id="9_scrk2"]
 [ext_resource type="PackedScene" uid="uid://cpehf7420wggx" path="res://scenes/items/Hats/Wizard.tscn" id="10_87osg"]
 [ext_resource type="PackedScene" uid="uid://brgfye0am53yk" path="res://scenes/items/Hats/Flowerpot.tscn" id="11_rqpov"]
 [ext_resource type="PackedScene" uid="uid://c1gxc8yqsxgl1" path="res://scenes/ui/game_screen/game_screen.tscn" id="13_qr2k7"]
+[ext_resource type="PackedScene" uid="uid://j6g8m4fklwjd" path="res://scenes/ui/Transitions/Transition.tscn" id="14_b5i1w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yth6d"]
 texture = ExtResource("1_q1o17")
@@ -796,6 +797,8 @@ position = Vector2(1208, 3664)
 position = Vector2(3392, 4128)
 
 [node name="GameScreen" parent="." instance=ExtResource("13_qr2k7")]
+
+[node name="Transition" parent="." instance=ExtResource("14_b5i1w")]
 
 [connection signal="timeout" from="CharacterBody2D/DashTimer" to="CharacterBody2D" method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="CharacterBody2D/DashCooldown" to="CharacterBody2D" method="_on_dash_cooldown_timeout"]

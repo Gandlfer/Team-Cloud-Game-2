@@ -1,14 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://cgnqlxirfrwdw"]
+[gd_scene load_steps=13 format=3 uid="uid://cgnqlxirfrwdw"]
 
-[ext_resource type="Texture2D" uid="uid://d0txrfrcqhao7" path="res://assets/Background/Green.png" id="1_16css"]
-[ext_resource type="Texture2D" uid="uid://cwjuuvo11sb2x" path="res://assets/Terrain (16x16).png" id="2_ddulu"]
+[ext_resource type="Texture2D" uid="uid://dexuylq61ytqh" path="res://assets/Background/Green.png" id="1_16css"]
+[ext_resource type="Texture2D" uid="uid://dix7ci51fwjlj" path="res://assets/Terrain (16x16).png" id="2_ddulu"]
 [ext_resource type="PackedScene" uid="uid://u062saf35tmu" path="res://scenes/characters/player/player.tscn" id="3_5rimt"]
-[ext_resource type="Texture2D" uid="uid://bfrxg6xys1p43" path="res://assets/BigGun.webp" id="4_kguce"]
+[ext_resource type="Texture2D" uid="uid://cedaupgsmxt0i" path="res://assets/BigGun.webp" id="4_kguce"]
 [ext_resource type="Script" path="res://scenes/items/gun/Gun.gd" id="5_mbsym"]
 [ext_resource type="PackedScene" uid="uid://cksexruq2ieme" path="res://scenes/items/EggofHarmony/ExitEgg.tscn" id="6_e1315"]
 [ext_resource type="PackedScene" uid="uid://480728mi3flq" path="res://scenes/items/Spike/Upward Spike.tscn" id="7_4k6nd"]
 [ext_resource type="PackedScene" uid="uid://x8spoxjs2tkx" path="res://scenes/items/Spike/Downward Spike.tscn" id="8_kt0ov"]
 [ext_resource type="PackedScene" uid="uid://c1gxc8yqsxgl1" path="res://scenes/ui/game_screen/game_screen.tscn" id="9_76n1r"]
+[ext_resource type="PackedScene" uid="uid://j6g8m4fklwjd" path="res://scenes/ui/Transitions/Transition.tscn" id="10_1jh27"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82jjl"]
 texture = ExtResource("2_ddulu")
@@ -676,6 +677,8 @@ position = Vector2(3256, -2392)
 position = Vector2(3336, -2800)
 
 [node name="GameScreen" parent="." instance=ExtResource("9_76n1r")]
+
+[node name="Transition" parent="." instance=ExtResource("10_1jh27")]
 
 [connection signal="timeout" from="CharacterBody2D/DashTimer" to="CharacterBody2D" method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="CharacterBody2D/DashCooldown" to="CharacterBody2D" method="_on_dash_cooldown_timeout"]

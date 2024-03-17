@@ -235,7 +235,7 @@ texture = ExtResource("10_tegue")
 wait_time = 0.09
 
 [node name="DashCooldown" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 3.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

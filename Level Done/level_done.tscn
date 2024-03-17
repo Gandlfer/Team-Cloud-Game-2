@@ -1,0 +1,150 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcpqf48eofy4i"]
+
+[ext_resource type="Texture2D" uid="uid://cy67wgu5kwrb5" path="res://assets/Background/Brown.png" id="2_kdaql"]
+[ext_resource type="Texture2D" uid="uid://d3ysm7xc8ruvn" path="res://assets/Background/Pink.png" id="2_rlftm"]
+[ext_resource type="Texture2D" uid="uid://c55sdpirdnt7t" path="res://assets/Background/Yellow.png" id="3_pvsc7"]
+
+[sub_resource type="GDScript" id="GDScript_is18v"]
+script/source = "extends Control
+
+
+
+func _on_next_level_pressed():
+	get_tree().change_scene_to_file(\"res://mainmenu/main_menu.tscn\")
+
+
+func _on_main_menu_button_pressed():
+	pass
+
+
+func _on_ability_unlocked_ready():
+	pass
+
+func _on_description_ready():
+	pass
+
+
+func _on_ability_label_ready():
+	$\"TextureRect2/Ability Back/AbilityLabel\".text = Global.Ability_Unlocked
+	$\"TextureRect2/Ability Back/AbilityDesc\".text = Global.Ability_Description
+"
+
+[sub_resource type="Theme" id="Theme_tvxx7"]
+
+[node name="Level Done" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -20.0
+offset_right = 15.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_is18v")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0121528
+anchor_top = 0.0308642
+anchor_right = 0.99566
+anchor_bottom = 1.02932
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_tvxx7")
+texture = ExtResource("2_rlftm")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Ability Back" type="TextureRect" parent="TextureRect2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0680448
+anchor_top = 0.0942813
+anchor_right = 0.395349
+anchor_bottom = 0.87017
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("2_kdaql")
+metadata/_edit_use_anchors_ = true
+
+[node name="Next Level Button" type="Button" parent="TextureRect2/Ability Back"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.202632
+anchor_top = 1.01195
+anchor_right = 0.785722
+anchor_bottom = 1.13543
+grow_horizontal = 2
+grow_vertical = 0
+text = "Next Level"
+metadata/_edit_use_anchors_ = true
+
+[node name="AbilityLabel" type="Label" parent="TextureRect2/Ability Back"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+scale = Vector2(0.999999, 1.96)
+text = "Dash Unlocked!"
+horizontal_alignment = 1
+
+[node name="AbilityDesc" type="Label" parent="TextureRect2/Ability Back"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.999999, 1.96)
+text = "Press d twice to dash through the air at high speeds"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Hat Back" type="TextureRect" parent="TextureRect2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.607235
+anchor_top = 0.0927357
+anchor_right = 0.932817
+anchor_bottom = 0.871716
+grow_vertical = 2
+texture = ExtResource("3_pvsc7")
+metadata/_edit_use_anchors_ = true
+
+[node name="Main Menu Button" type="Button" parent="TextureRect2/Hat Back"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.247813
+anchor_top = 1.01417
+anchor_right = 0.830904
+anchor_bottom = 1.13765
+grow_horizontal = 2
+grow_vertical = 0
+text = "Main Menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="TextureRect2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0206718
+anchor_top = 0.0123648
+anchor_right = 0.165875
+anchor_bottom = 0.0823226
+offset_right = -49.5811
+offset_bottom = -22.2627
+scale = Vector2(1.41665, 1.96794)
+text = "Level Complete"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="TextureRect2/Ability Back/Next Level Button" to="." method="_on_next_level_pressed"]
+[connection signal="ready" from="TextureRect2/Ability Back/AbilityLabel" to="." method="_on_ability_label_ready"]
+[connection signal="pressed" from="TextureRect2/Hat Back/Main Menu Button" to="." method="_on_next_level_pressed"]

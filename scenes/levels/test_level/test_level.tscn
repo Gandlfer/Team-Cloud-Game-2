@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkcrpvvqapgi4"]
+[gd_scene load_steps=5 format=3 uid="uid://bkcrpvvqapgi4"]
 
 [ext_resource type="Texture2D" uid="uid://cwjuuvo11sb2x" path="res://assets/Terrain (16x16).png" id="1_8wleb"]
 [ext_resource type="PackedScene" uid="uid://u062saf35tmu" path="res://scenes/characters/player/player.tscn" id="2_gjt38"]
-[ext_resource type="PackedScene" uid="uid://480728mi3flq" path="res://scenes/items/Spike/Upward Spike.tscn" id="3_8hv7c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_majmj"]
 texture = ExtResource("1_8wleb")
@@ -467,7 +466,7 @@ layer_0/tile_data = PackedInt32Array(65536, 458752, 8, 65537, 458752, 8, 65538, 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_gjt38")]
 position = Vector2(56, -48)
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(0.75, 0.75)
 limit_left = -250
 limit_top = -230
@@ -475,17 +474,8 @@ limit_right = 2300
 limit_bottom = 2300
 editor_draw_limits = true
 
-[node name="DashTimer" type="Timer" parent="CharacterBody2D"]
+[node name="DashTimer2" type="Timer" parent="CharacterBody2D"]
 wait_time = 0.09
 
-[node name="DashCooldown" type="Timer" parent="CharacterBody2D"]
+[node name="DashCooldown2" type="Timer" parent="CharacterBody2D"]
 wait_time = 0.2
-
-[node name="StaticBody2D" parent="." instance=ExtResource("3_8hv7c")]
-position = Vector2(224, -8)
-
-[node name="StaticBody2D2" parent="." instance=ExtResource("3_8hv7c")]
-position = Vector2(312, -8)
-
-[connection signal="timeout" from="CharacterBody2D/DashTimer" to="CharacterBody2D" method="_on_dash_timer_timeout"]
-[connection signal="timeout" from="CharacterBody2D/DashCooldown" to="CharacterBody2D" method="_on_dash_cooldown_timeout"]

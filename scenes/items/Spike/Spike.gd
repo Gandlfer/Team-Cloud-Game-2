@@ -13,19 +13,18 @@ func _process(delta):
 
 
 func _on_area_2d_body_entered(body):
-	if body.name=="CharacterBody2D":
-		print("Damaged")
+	if body.is_in_group("Player"):
 		body.damaged=true
-		await get_tree().create_timer(1).timeout
-		#print(body.damaged)
+		await get_tree().create_timer(2).timeout
+		
 		for x in $Area2D.get_overlapping_bodies():
 			_on_area_2d_body_entered(x)
-		
-	pass # Replace with function body.
+
+
 func temp(body):
 	while(true):
 		for x in $Area2D.get_overlapping_bodies():
-			if(x.name == "CharacterBody2D"):
+			if(x.is_in_group("Player")):
 				body.damaged=true
 			else:
 				break

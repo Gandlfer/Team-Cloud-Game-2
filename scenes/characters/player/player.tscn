@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://u062saf35tmu"]
+[gd_scene load_steps=33 format=3 uid="uid://u062saf35tmu"]
 
 [ext_resource type="Script" path="res://scenes/characters/player/player.gd" id="1_sh5fx"]
 [ext_resource type="Texture2D" uid="uid://8ywjkj8s2lg8" path="res://assets/PuffelImages/Jump_32x32.png" id="5_akebq"]
@@ -189,31 +189,35 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y36t6"]
-size = Vector2(21.3333, 21)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24qqt"]
+size = Vector2(25, 22)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tawii"]
-size = Vector2(15, 4)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ruegg"]
-size = Vector2(25, 27)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6abc"]
+size = Vector2(26.6667, 26.6667)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 scale = Vector2(3, 3)
-collision_layer = 3
-collision_mask = 5
+collision_layer = 2
 script = ExtResource("1_sh5fx")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_5enng")
-animation = &"jump_puffel"
+animation = &"new_animation"
 autoplay = "new_animation"
-frame_progress = 0.951978
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.666667, 5.5)
-shape = SubResource("RectangleShape2D_y36t6")
+position = Vector2(1.5, 5)
+shape = SubResource("RectangleShape2D_24qqt")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0.666666, 3.33333)
+shape = SubResource("RectangleShape2D_o6abc")
+debug_color = Color(0.945098, 0.192157, 0.368627, 0.419608)
 
 [node name="Hats0" type="Sprite2D" parent="."]
 visible = false
@@ -227,23 +231,15 @@ position = Vector2(-6.66667, 38)
 scale = Vector2(0.0888503, 0.0823303)
 texture = ExtResource("10_tegue")
 
-[node name="Jumpbox" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 5
+[node name="DashTimer" type="Timer" parent="."]
+wait_time = 0.09
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Jumpbox"]
-position = Vector2(1.5, 14.6667)
-shape = SubResource("RectangleShape2D_tawii")
-debug_color = Color(1, 0, 0, 0.392157)
+[node name="DashCooldown" type="Timer" parent="."]
+wait_time = 0.2
 
-[node name="Hurtbox" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 4
+[node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" groups=["Player"]]
-position = Vector2(1.5, 2.5)
-shape = SubResource("RectangleShape2D_ruegg")
-debug_color = Color(0.819608, 0.403922, 0.105882, 0.419608)
-
-[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
-[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]

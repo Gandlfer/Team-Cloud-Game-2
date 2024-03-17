@@ -200,10 +200,17 @@ func get_jump_damage_amount():
 	return JUMP_DAMAGE
 
 
-func _on_hurtbox_area_entered(area):
+func _on_hitbox_area_entered(area):
 	if area.is_in_group("Enemy"):
 		HealthManager.minus_health(area.damage)
+		
+	if HealthManager.current_health == 0:
+		queue_free()
 
-func _on_hurtbox_body_entered(body: Node2D):
+
+func _on_hitbox_body_entered(body):
 	if body.is_in_group("Enemy"):
 		HealthManager.minus_health(body.damage)
+	
+	if HealthManager.current_health == 0:
+		queue_free()

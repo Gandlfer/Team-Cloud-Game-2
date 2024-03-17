@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbamo5amixx4v"]
+
+[ext_resource type="PackedScene" uid="uid://u062saf35tmu" path="res://scenes/characters/player/player.tscn" id="1_yhhdl"]
+
+[sub_resource type="GDScript" id="GDScript_uak8x"]
+script/source = "extends Node2D
+var save_path=\"res://Saved\"
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_geypy"]
+size = Vector2(184, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44wr1"]
+size = Vector2(26, 209)
+
+[node name="ChoosingHats" type="Node2D"]
+script = SubResource("GDScript_uak8x")
+
+[node name="Left" type="Button" parent="."]
+offset_left = -168.0
+offset_top = -104.0
+offset_right = -120.0
+offset_bottom = -24.0
+
+[node name="Polygon2D" type="Polygon2D" parent="Left"]
+color = Color(0, 0, 1, 1)
+polygon = PackedVector2Array(40, 8, 40, 72, 8, 40)
+
+[node name="Right" type="Button" parent="."]
+offset_left = 112.0
+offset_top = -104.0
+offset_right = 160.0
+offset_bottom = -24.0
+
+[node name="Polygon2D" type="Polygon2D" parent="Right"]
+position = Vector2(-248, -248)
+color = Color(0, 0, 1, 1)
+polygon = PackedVector2Array(256, 320, 288, 288, 256, 256)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CharacterBody2D" parent="StaticBody2D" instance=ExtResource("1_yhhdl")]
+position = Vector2(-8, -8)
+
+[node name="Camera2D" type="Camera2D" parent="StaticBody2D/CharacterBody2D"]
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-8, -136)
+shape = SubResource("RectangleShape2D_geypy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-4, 56)
+shape = SubResource("RectangleShape2D_geypy")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-104, -40)
+shape = SubResource("RectangleShape2D_44wr1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(96, -40)
+shape = SubResource("RectangleShape2D_44wr1")
+
+[connection signal="pressed" from="Left" to="StaticBody2D/CharacterBody2D" method="_on_left_pressed"]
+[connection signal="pressed" from="Right" to="StaticBody2D/CharacterBody2D" method="_on_right_pressed"]

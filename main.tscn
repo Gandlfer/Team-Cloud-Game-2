@@ -1,13 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://df605ruyjkkwy"]
 
-[ext_resource type="Texture2D" uid="uid://crqadtecmely8" path="res://Green.png" id="1_7uaw6"]
-[ext_resource type="Texture2D" uid="uid://b3betcfv7amja" path="res://Terrain (16x16).png" id="2_et6cb"]
-[ext_resource type="PackedScene" uid="uid://u062saf35tmu" path="res://scenes/mainCharacter.tscn" id="3_0whxe"]
-[ext_resource type="Texture2D" uid="uid://brof7eii3oudh" path="res://BigGun.webp" id="4_s7qte"]
-[ext_resource type="Script" path="res://Gun.gd" id="5_gai87"]
+[ext_resource type="Texture2D" uid="uid://hxhf88qdeere" path="res://assets/Green.png" id="1_xapgh"]
+[ext_resource type="Texture2D" uid="uid://cwjuuvo11sb2x" path="res://assets/Terrain (16x16).png" id="2_l0ekg"]
+[ext_resource type="PackedScene" uid="uid://u062saf35tmu" path="res://scenes/characters/player/player.tscn" id="3_0whxe"]
+[ext_resource type="Texture2D" uid="uid://bfrxg6xys1p43" path="res://assets/BigGun.webp" id="4_fdktp"]
+[ext_resource type="Script" path="res://scenes/items/gun/Gun.gd" id="5_gai87"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82jjl"]
-texture = ExtResource("2_et6cb")
+texture = ExtResource("2_l0ekg")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -590,7 +590,7 @@ offset_right = 4195.0
 offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_7uaw6")
+texture = ExtResource("1_xapgh")
 stretch_mode = 1
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -619,7 +619,7 @@ wait_time = 0.2
 [node name="Gun" type="Sprite2D" parent="Puffel"]
 position = Vector2(25, 0)
 scale = Vector2(0.02, 0.02)
-texture = ExtResource("4_s7qte")
+texture = ExtResource("4_fdktp")
 script = ExtResource("5_gai87")
 
 [connection signal="timeout" from="Puffel/DashTimer" to="Puffel" method="_on_dash_timer_timeout"]

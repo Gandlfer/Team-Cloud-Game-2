@@ -68,10 +68,11 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		canDoubleJump = true
 		velocity.y = JUMP_VELOCITY
+		$SoundJump.play()
 	elif Input.is_action_just_pressed("jump") and !is_on_floor() and canDoubleJump:
 		canDoubleJump = false
 		velocity.y = JUMP_VELOCITY
-		
+	
 	# when you release jump your y vel is divided by 3 so you can control your jump height
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y = JUMP_VELOCITY/3
@@ -85,12 +86,14 @@ func _physics_process(delta):
 	# handles input for ground slam
 	if Input.is_action_just_pressed("jump") and Input.is_action_pressed("down") and !is_on_floor():
 		groundSlamming = true
+		$SoundGroundSlam.play()
 	
 	#handles input for dash
 	if Input.is_action_pressed("dash") and canDash and dash:
 		dashing = true
 		dashOnCooldown = true
 		canDash = false
+		$SoundDash.play()
 		$DashTimer.start()
 		$DashCooldown.start()
 		
@@ -122,6 +125,7 @@ func _physics_process(delta):
 	if(damaged and !isDamage):
 		isDamage= true
 		flicker()
+		$SoundDamage.play()
 		#print("Damaged here")
 		velocity.y = -750 # bounce upwards when damage
 		

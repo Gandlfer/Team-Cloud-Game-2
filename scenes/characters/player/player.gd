@@ -11,6 +11,7 @@ const GROUND_SLAM_SPEED = 4000
 const JUMP_VELOCITY = -1300.0
 const GUN_VELOCITY = 2000.0
 const GRAVITY = 5500
+const JUMP_DAMAGE = 1
 
 var gravity = GRAVITY
 var canDoubleJump = false
@@ -47,8 +48,6 @@ func _ready():
 
 
 func _physics_process(delta):
-	
-	
 	# animations
 	if (velocity.x > 1 || velocity.x < -1):
 		sprite_2d.animation = "run_puffel"
@@ -195,3 +194,16 @@ func _on_right_pressed():
 			else:
 				currenthat+=1
 		get_node(hatNode % currenthat).visible=true
+		
+		
+func get_jump_damage_amount():
+	return JUMP_DAMAGE
+
+
+func _on_hurtbox_area_entered(area):
+	if area.is_in_group("Enemy"):
+		HealthManager.minus_health(area.damage)
+
+func _on_hurtbox_body_entered(body: Node2D):
+	if body.is_in_group("Enemy"):
+		HealthManager.minus_health(body.damage)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cgnqlxirfrwdw"]
+[gd_scene load_steps=12 format=3 uid="uid://cgnqlxirfrwdw"]
 
 [ext_resource type="Texture2D" uid="uid://d0txrfrcqhao7" path="res://assets/Background/Green.png" id="1_16css"]
 [ext_resource type="Texture2D" uid="uid://cwjuuvo11sb2x" path="res://assets/Terrain (16x16).png" id="2_ddulu"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cksexruq2ieme" path="res://scenes/items/EggofHarmony/ExitEgg.tscn" id="6_e1315"]
 [ext_resource type="PackedScene" uid="uid://480728mi3flq" path="res://scenes/items/Spike/Upward Spike.tscn" id="7_4k6nd"]
 [ext_resource type="PackedScene" uid="uid://x8spoxjs2tkx" path="res://scenes/items/Spike/Downward Spike.tscn" id="8_kt0ov"]
+[ext_resource type="PackedScene" uid="uid://c1gxc8yqsxgl1" path="res://scenes/ui/game_screen/game_screen.tscn" id="9_76n1r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82jjl"]
 texture = ExtResource("2_ddulu")
@@ -673,6 +674,8 @@ position = Vector2(3256, -2392)
 
 [node name="DownwardSpike" parent="." instance=ExtResource("8_kt0ov")]
 position = Vector2(3336, -2800)
+
+[node name="GameScreen" parent="." instance=ExtResource("9_76n1r")]
 
 [connection signal="timeout" from="CharacterBody2D/DashTimer" to="CharacterBody2D" method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="CharacterBody2D/DashCooldown" to="CharacterBody2D" method="_on_dash_cooldown_timeout"]

@@ -15,6 +15,10 @@ run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://assets/icon.svg"
 
+[autoload]
+
+HealthManager="*res://scripts/health_manager.gd"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
@@ -74,10 +78,17 @@ shoot={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="GROUND"
+2d_physics/layer_2="PLAYER"
+2d_physics/layer_3="ENEMY"
+
 [physics]
 
 2d/default_gravity=2500.0
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"

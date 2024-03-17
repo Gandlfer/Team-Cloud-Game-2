@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://df605ruyjkkwy"]
+[gd_scene load_steps=10 format=3 uid="uid://df605ruyjkkwy"]
 
 [ext_resource type="Texture2D" uid="uid://hxhf88qdeere" path="res://assets/Green.png" id="1_xapgh"]
 [ext_resource type="Texture2D" uid="uid://cwjuuvo11sb2x" path="res://assets/Terrain (16x16).png" id="2_l0ekg"]
 [ext_resource type="PackedScene" uid="uid://u062saf35tmu" path="res://scenes/characters/player/player.tscn" id="3_0whxe"]
 [ext_resource type="Texture2D" uid="uid://bfrxg6xys1p43" path="res://assets/BigGun.webp" id="4_fdktp"]
 [ext_resource type="Script" path="res://scenes/items/gun/Gun.gd" id="5_gai87"]
+[ext_resource type="PackedScene" uid="uid://dmnuchgorjev5" path="res://scenes/characters/slime/slime.tscn" id="6_ko1se"]
+[ext_resource type="PackedScene" uid="uid://c1gxc8yqsxgl1" path="res://scenes/ui/game_screen/game_screen.tscn" id="7_m6pv0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82jjl"]
 texture = ExtResource("2_l0ekg")
@@ -578,7 +580,7 @@ texture = ExtResource("2_l0ekg")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_82jjl")
 
-[node name="Node" type="Node"]
+[node name="World" type="Node"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
@@ -621,6 +623,21 @@ position = Vector2(25, 0)
 scale = Vector2(0.02, 0.02)
 texture = ExtResource("4_fdktp")
 script = ExtResource("5_gai87")
+
+[node name="Slime" parent="." node_paths=PackedStringArray("patrol_points") instance=ExtResource("6_ko1se")]
+position = Vector2(783, 401)
+scale = Vector2(4, 4)
+patrol_points = NodePath("PatrolPoints")
+
+[node name="PatrolPoints" type="Node2D" parent="Slime"]
+
+[node name="Point1" type="Marker2D" parent="Slime/PatrolPoints"]
+position = Vector2(-22, 7.75)
+
+[node name="Point2" type="Marker2D" parent="Slime/PatrolPoints"]
+position = Vector2(33, 8.25)
+
+[node name="GameScreen" parent="." instance=ExtResource("7_m6pv0")]
 
 [connection signal="timeout" from="Puffel/DashTimer" to="Puffel" method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="Puffel/DashCooldown" to="Puffel" method="_on_dash_cooldown_timeout"]

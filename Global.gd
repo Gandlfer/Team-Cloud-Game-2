@@ -1,4 +1,6 @@
 extends Node
 
-var Ability_Unlocked = "Dash"
-var Ability_Description = "Dash thru the air by pressing d twice"
+var Ability_Unlocked = ""
+var Ability_Description = ""
+var hat : String = ""
+var level: int = 0

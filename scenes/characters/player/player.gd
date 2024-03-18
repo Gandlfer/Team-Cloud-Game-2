@@ -131,9 +131,17 @@ func _physics_process(delta):
 		if HealthManager.current_health == 0:
 			queue_free()
 		velocity.y = -750 # bounce upwards when damage
-		
-	
-	
+	if Global.hat != "":
+		if get_parent().name != "StaticBody2D":
+			#if St
+			#print(Global.hat)
+			#print(get_parent())
+			print(Global.hat)
+			#print(get_child(10).name == Global.hat)
+			print(find_child(Global.hat).visible)
+			find_child(Global.hat).visible=true
+			#get_parent().find_child("Player").find_child(Global.hat).visible = true
+			#print(get_parent())#.visible = true
 # dash duration timer
 func _on_dash_timer_timeout():
 	dashing = false
@@ -188,6 +196,7 @@ func _on_left_pressed():
 			else:
 				currenthat-=1
 		get_node(hatNode % currenthat).visible=true
+		Global.hat=hatNode % currenthat
 
 
 func _on_right_pressed():
@@ -201,7 +210,7 @@ func _on_right_pressed():
 			else:
 				currenthat+=1
 		get_node(hatNode % currenthat).visible=true
-		
+		Global.hat=hatNode % currenthat
 		
 func get_jump_damage_amount():
 	return JUMP_DAMAGE

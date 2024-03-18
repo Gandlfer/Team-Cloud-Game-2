@@ -6,7 +6,7 @@ func _ready():
 func _on_start_pressed():
 	$AudioStreamPlayer.play()
 	get_tree().change_scene_to_file("res://scenes/levels/level_1/DoubleJump.tscn")
-
+	#get_tree().change_scene_to_file("res://scenes/levels/test_level/test_level.tscn")	
 
 func _on_customization_pressed():
 	$AudioStreamPlayer.play()

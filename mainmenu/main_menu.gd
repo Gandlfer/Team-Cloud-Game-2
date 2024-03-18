@@ -1,5 +1,7 @@
 extends Node
 
+func _ready():
+	$BgMusic.play()
 
 func _on_start_pressed():
 	$AudioStreamPlayer.play()

@@ -609,7 +609,7 @@ stretch_mode = 1
 
 [node name="PlayerSpawner" parent="." instance=ExtResource("3_cww7j")]
 process_priority = 1
-position = Vector2(192, -2595)
+position = Vector2(194, -2599)
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1

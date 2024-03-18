@@ -126,7 +126,10 @@ func _physics_process(delta):
 		isDamage= true
 		flicker()
 		$SoundDamage.play()
-		#print("Damaged here")
+		HealthManager.minus_health(1)
+		
+		if HealthManager.current_health == 0:
+			queue_free()
 		velocity.y = -750 # bounce upwards when damage
 		
 	
@@ -205,16 +208,17 @@ func get_jump_damage_amount():
 
 
 func _on_hitbox_area_entered(area):
-	if area.is_in_group("Enemy"):
-		HealthManager.minus_health(area.damage)
-		
-	if HealthManager.current_health == 0:
-		queue_free()
-
+	#if area.is_in_group("Enemy"):
+		#HealthManager.minus_health(area.damage)
+		#
+	#if HealthManager.current_health == 0:
+		#queue_free()
+	pass
 
 func _on_hitbox_body_entered(body):
-	if body.is_in_group("Enemy"):
-		HealthManager.minus_health(body.damage)
-	
-	if HealthManager.current_health == 0:
-		queue_free()
+	#if body.is_in_group("Enemy"):
+		#HealthManager.minus_health(body.damage)
+	#
+	#if HealthManager.current_health == 0:
+		#queue_free()
+	pass

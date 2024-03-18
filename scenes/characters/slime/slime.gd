@@ -21,6 +21,9 @@ var current_point: Vector2
 var current_point_position: int
 var can_walk: bool = false
 
+var hit
+var ishit=false
+var playerbody 
 
 func _ready():
 	if patrol_points != null:
@@ -41,7 +44,9 @@ func _physics_process(delta: float):
 	enemy_walk(delta)
 	move_and_slide()
 	enemy_animations()
-	
+	if hit and !ishit:
+		hitcd()
+		
 func enemy_gravity(delta: float):
 	velocity.y += GRAVITY * delta
 
@@ -95,3 +100,17 @@ func _on_hurtbox_area_entered(area: Area2D):
 		
 		if health <= 0:
 			queue_free()
+
+func hitcd():
+	ishit=true
+	playerbody.damaged=true
+	await get_tree().create_timer(2).timeout
+	ishit=false
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("Player"):
+		print("Collided")
+		playerbody=body
+		hit = true
+		queue_free()
+	pass # Replace with function body.

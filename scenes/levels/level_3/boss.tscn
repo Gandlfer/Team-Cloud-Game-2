@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cjm6e77hhavty"]
 
-[ext_resource type="Texture2D" uid="uid://3yt2u43pxumf" path="res://assets/icon.svg" id="1_rvh1c"]
 [ext_resource type="Script" path="res://scenes/levels/level_3/boss.gd" id="2_0l36i"]
+[ext_resource type="Texture2D" uid="uid://b8jkcclwvtnwv" path="res://assets/FuckedUpPuffel.png" id="2_yqcr3"]
 [ext_resource type="PackedScene" uid="uid://bhbcge80lfgy1" path="res://scenes/levels/level_3/boss_healthbar.tscn" id="3_jqmxa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v1h0s"]
@@ -11,9 +11,13 @@ size = Vector2(113, 116)
 script = ExtResource("2_0l36i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_rvh1c")
+position = Vector2(-1, -1.90735e-06)
+scale = Vector2(3.35294, 3.86667)
+texture = ExtResource("2_yqcr3")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D"]
+position = Vector2(0.298246, 4.9328e-07)
+scale = Vector2(0.298246, 0.258621)
 collision_layer = 4
 collision_mask = 27
 

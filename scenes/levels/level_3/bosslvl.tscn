@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cwiduqjmarcp1"]
+[gd_scene load_steps=15 format=3 uid="uid://cwiduqjmarcp1"]
 
 [ext_resource type="Texture2D" uid="uid://de5h34jicdhis" path="res://assets/Background/Gray.png" id="1_0pjfl"]
 [ext_resource type="Script" path="res://scenes/levels/level_3/bosslvl.gd" id="1_sf5c6"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://480728mi3flq" path="res://scenes/items/Spike/Upward Spike.tscn" id="6_1qwsl"]
 [ext_resource type="PackedScene" uid="uid://cjm6e77hhavty" path="res://scenes/levels/level_3/boss.tscn" id="6_g8txt"]
 [ext_resource type="PackedScene" uid="uid://j6g8m4fklwjd" path="res://scenes/ui/Transitions/Transition.tscn" id="9_milfs"]
+[ext_resource type="AudioStream" uid="uid://cr3uewjyl12cm" path="res://sounds/level3song.mp3" id="11_bt6v6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82jjl"]
 texture = ExtResource("2_svfkk")
@@ -674,5 +675,11 @@ position = Vector2(2580, 2766)
 
 [node name="Transition" parent="." instance=ExtResource("9_milfs")]
 
+[node name="BgMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_bt6v6")
+volume_db = -12.18
+autoplay = true
+
 [connection signal="egg" from="Boss" to="." method="_on_boss_egg"]
 [connection signal="body_entered" from="Boss/Area2D" to="Boss" method="_on_area_2d_body_entered"]
+[connection signal="finished" from="BgMusic" to="." method="_on_bg_music_finished"]

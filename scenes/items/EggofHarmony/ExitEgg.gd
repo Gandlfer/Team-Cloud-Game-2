@@ -56,4 +56,8 @@ func _on_area_2d_body_entered(body):
 		$"../Transition".visible=false
 		#$"../Level Done".visible = true
 		#$"../Level Done/Camera2D".enabled = true
-		get_tree().change_scene_to_file("res://Level Done/level_done.tscn")
+		
+		if get_parent().name != "BossLevel":
+			get_tree().change_scene_to_file("res://Level Done/level_done.tscn")
+		else:
+			get_tree().change_scene_to_file("res://scenes/winscreen.tscn")

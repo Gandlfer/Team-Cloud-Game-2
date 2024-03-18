@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://dmnuchgorjev5"]
+[gd_scene load_steps=20 format=3 uid="uid://dmnuchgorjev5"]
 
 [ext_resource type="Script" path="res://scenes/characters/slime/slime.gd" id="1_c8h1t"]
-[ext_resource type="Texture2D" uid="uid://50rqxul80g3g" path="res://assets/enemies/Red Slime Spritesheet.png" id="1_vy5s3"]
+[ext_resource type="Texture2D" uid="uid://ktf6b1qaf3py" path="res://assets/enemies/Red Slime Spritesheet.png" id="1_vy5s3"]
+[ext_resource type="AudioStream" path="res://sounds/sfx_gross-guts-slime-goo-33112.mp3" id="3_bcnxt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qehjw"]
 atlas = ExtResource("1_vy5s3")
@@ -124,6 +125,13 @@ script = ExtResource("1_c8h1t")
 sprite_frames = SubResource("SpriteFrames_tclx7")
 animation = &"walk"
 autoplay = "idle"
+
+[node name="SoundSlime" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
+stream = ExtResource("3_bcnxt")
+volume_db = 6.19
+pitch_scale = 1.25
+max_distance = 1000.0
+attenuation = 0.392292
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)

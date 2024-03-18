@@ -36,7 +36,7 @@ func _ready():
 	
 	timer.wait_time = wait_time
 	current_state = State.Idle
-	
+	$AnimatedSprite2D/SoundSlime.play()
 	
 func _physics_process(delta: float):
 	enemy_gravity(delta)
@@ -60,9 +60,11 @@ func enemy_idle(delta: float):
 func enemy_walk(delta: float):
 	if !can_walk: return
 	
+	
 	if abs(position.x - current_point.x) > 0.5:
 		velocity.x = direction.x * speed * delta
 		current_state = State.Walk
+		
 	else:
 		current_point_position += 1
 	
@@ -83,9 +85,11 @@ func enemy_walk(delta: float):
 
 
 func enemy_animations():
+	
 	if current_state == State.Idle && !can_walk:
 		animated_sprite_2d.play("idle")
 	elif current_state == State.Walk && can_walk:
+		
 		animated_sprite_2d.play("walk")
 
 func _on_timer_timeout():

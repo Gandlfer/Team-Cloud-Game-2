@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://u062saf35tmu"]
+[gd_scene load_steps=45 format=3 uid="uid://u062saf35tmu"]
 
 [ext_resource type="Script" path="res://scenes/characters/player/player.gd" id="1_sh5fx"]
 [ext_resource type="Texture2D" uid="uid://cy3jsji4k6qxj" path="res://assets/PuffelImages/Jump_32x32.png" id="5_akebq"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://cp4rvbx5a0l3u" path="res://assets/HatsImage/candles.png" id="12_mfxy8"]
 [ext_resource type="Texture2D" uid="uid://dppotun7kf206" path="res://assets/HatsImage/viking.png" id="13_by181"]
 [ext_resource type="Script" path="res://scenes/characters/player/Camera2D.gd" id="16_lnmhj"]
+[ext_resource type="Texture2D" uid="uid://dwd6k31qabvsp" path="res://assets/BigGun.webp" id="17_llgqr"]
+[ext_resource type="Script" path="res://scenes/items/gun/Gun.gd" id="18_fyvum"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q6bfs"]
 atlas = ExtResource("6_b5ahm")
@@ -233,7 +235,7 @@ debug_color = Color(0.945098, 0.192157, 0.368627, 0.419608)
 wait_time = 0.09
 
 [node name="DashCooldown" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 0.2
 
 [node name="SoundJump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_abv7t")
@@ -294,6 +296,15 @@ texture = ExtResource("12_mfxy8")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("16_lnmhj")
+
+[node name="Gun" type="Sprite2D" parent="."]
+position = Vector2(25, 0)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("17_llgqr")
+script = ExtResource("18_fyvum")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(40, -6)
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

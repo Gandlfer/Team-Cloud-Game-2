@@ -33,15 +33,20 @@ func _physics_process(_delta):
 	
 	if fightStarted:
 		if canAttack:
-			a = floor(randf_range(0, 2))
+			a = randi_range(0, 1)
 			attacking = false
 			canAttack = false
-			print(a)
+			$ExclaimationPoint.visible = true
+			if a == 1:
+				$ExclaimationPoint2.visible = true
+				$ExclaimationPoint3.visible = true
+			
 			$AttackStartup.start()
 		
 		if attacking:
 			if a == 0:
 				if direction == "left":
+					$ExclaimationPoint.visible = false
 					position.x -= DASH_SPEED
 					
 					if position.x < limit_left:
@@ -50,6 +55,7 @@ func _physics_process(_delta):
 						$AttackCooldown.start()
 						direction = "right"
 				else:
+					$ExclaimationPoint.visible = false
 					position.x += DASH_SPEED
 					
 					if position.x > limit_right:
@@ -59,6 +65,9 @@ func _physics_process(_delta):
 						direction = "left"
 			else:
 				if direction == "left":
+					$ExclaimationPoint.visible = false
+					$ExclaimationPoint2.visible = false
+					$ExclaimationPoint3.visible = false
 					position.x -= DASH_SPEED
 					
 					if position.x < limit_left:
@@ -68,10 +77,14 @@ func _physics_process(_delta):
 						else:
 							#canAttack = false
 							attacking = false
+							$ExclaimationPoint.visible = false
 							$AttackCooldown.start()
 							direction = "right"
 							secondDash = false
 				else:
+					$ExclaimationPoint.visible = false
+					$ExclaimationPoint2.visible = false
+					$ExclaimationPoint3.visible = false
 					position.x += DASH_SPEED
 					
 					if position.x > limit_right:
@@ -81,6 +94,7 @@ func _physics_process(_delta):
 						else:
 							#canAttack = false
 							attacking = false
+							$ExclaimationPoint.visible = false
 							$AttackCooldown.start()
 							direction = "left"
 							secondDash = false
@@ -95,5 +109,13 @@ func _on_attack_cooldown_timeout():
 
 
 func _on_attack_startup_timeout():
-	print("attacking")
 	attacking = true
+
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("Player"):
+		body.damaged=true
+		await get_tree().create_timer(2).timeout
+		
+		for x in $Area2D.get_overlapping_bodies():
+			_on_area_2d_body_entered(x)

@@ -32,22 +32,34 @@ var hatNode = "Hats%d"
 @export var groundSlamming = false
 @export var dashing = false
 
+@onready var bullet = preload("res://scenes/levels/level_3/bullet.tscn")
+var b
+var gun = false
+
 func _ready():
 	load_data()
 	#print(get_parent().name)
 	if get_parent().name == "DoubleJumpLevel":
 		#print("true")
 		dash = false
-	else:
+		gun = false
+	elif get_parent().name == "DashLevel":
 		dash = true
-	# gunSignal.gunShotDown.connect(_gun_shoot_down)
-	# gunSignal.gunShotUp.connect(_gun_shoot_up)
-	# gunSignal.gunShotLeft.connect(_gun_shoot_left)
-	# gunSignal.gunShotRight.connect(_gun_shoot_right)
+		gun = false
+	elif get_parent().name == "BossLevel":
+		dash = true
+		gun = true
 	pass
 
+func shoot(isLeft):
+	b = bullet.instantiate()
+	b.init(isLeft)
+	get_parent().add_child(b)
+	b.global_position = $Marker2D.global_position
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("shoot"):
+		shoot(isLeft)
 	# animations
 	if (velocity.x > 1 || velocity.x < -1):
 		sprite_2d.animation = "run_puffel"
@@ -107,6 +119,12 @@ func _physics_process(delta):
 		velocity.y = 0
 	
 	# left and right movement
+	if gun:
+		if Input.is_action_pressed("left"):
+			$Marker2D.position.x = -40
+		if Input.is_action_pressed("right"):
+			$Marker2D.position.x = 40
+	
 	var direction = Input.get_axis("left", "right")
 	if direction and !dashing and !groundSlamming:
 		velocity.x = direction * SPEED
@@ -214,7 +232,6 @@ func _on_right_pressed():
 		
 func get_jump_damage_amount():
 	return JUMP_DAMAGE
-
 
 func _on_hitbox_area_entered(area):
 	#if area.is_in_group("Enemy"):

@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cjm6e77hhavty"]
 
-[ext_resource type="Texture2D" uid="uid://boshfedw4uhtr" path="res://assets/icon.svg" id="1_rvh1c"]
-[ext_resource type="Script" path="res://scenes/levels/3_boss_level/boss.gd" id="2_0l36i"]
-[ext_resource type="PackedScene" uid="uid://bhbcge80lfgy1" path="res://scenes/levels/3_boss_level/boss_healthbar.tscn" id="3_jqmxa"]
+[ext_resource type="Texture2D" uid="uid://3yt2u43pxumf" path="res://assets/icon.svg" id="1_rvh1c"]
+[ext_resource type="Script" path="res://scenes/levels/level_3/boss.gd" id="2_0l36i"]
+[ext_resource type="PackedScene" uid="uid://bhbcge80lfgy1" path="res://scenes/levels/level_3/boss_healthbar.tscn" id="3_jqmxa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v1h0s"]
 size = Vector2(113, 116)

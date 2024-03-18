@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://iefhk84hciax"]
 
 [ext_resource type="Script" path="res://mainmenu/main_menu.gd" id="1_cv5ac"]
-[ext_resource type="Texture2D" uid="uid://dqle3n3042x7t" path="res://assets/Background/Pink.png" id="2_0s078"]
-[ext_resource type="Texture2D" uid="uid://dr1bfbcdmryxe" path="res://mainmenu/logo.png" id="3_p7lsg"]
-[ext_resource type="Texture2D" uid="uid://dntsuqjek82yr" path="res://mainmenu/puffel_32x_32.png" id="4_l2dxo"]
-[ext_resource type="Texture2D" uid="uid://defb3thgsjydm" path="res://assets/Terrain (16x16).png" id="5_33o8o"]
-[ext_resource type="AudioStream" uid="uid://d24ivn0aqp6te" path="res://sounds/select-sound-121244.mp3" id="6_ye61o"]
+[ext_resource type="Texture2D" uid="uid://cmkveggkldcoo" path="res://assets/Background/Pink.png" id="2_0s078"]
+[ext_resource type="Texture2D" uid="uid://cpw0elk14s50b" path="res://mainmenu/logo.png" id="3_p7lsg"]
+[ext_resource type="Texture2D" uid="uid://bknpdh3xinsfa" path="res://mainmenu/puffel_32x_32.png" id="4_l2dxo"]
+[ext_resource type="Texture2D" uid="uid://bkq6ppvbc1bcp" path="res://assets/Terrain (16x16).png" id="5_33o8o"]
+[ext_resource type="AudioStream" uid="uid://368q3f8jsfuk" path="res://sounds/select-sound-121244.mp3" id="6_ye61o"]
 [ext_resource type="PackedScene" uid="uid://bbamo5amixx4v" path="res://scenes/items/HatSelection/ChoosingHats.tscn" id="7_xqpga"]
-[ext_resource type="AudioStream" uid="uid://curehy7reyihs" path="res://sounds/Title.mp3" id="8_8ruu1"]
+[ext_resource type="AudioStream" uid="uid://bpgvhfr27qht7" path="res://sounds/Title.mp3" id="8_8ruu1"]
 
 [sub_resource type="Theme" id="Theme_a1gx5"]
 

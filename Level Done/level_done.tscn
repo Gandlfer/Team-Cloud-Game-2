@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://dcpqf48eofy4i"]
 
-[ext_resource type="Texture2D" uid="uid://dle3qrt4grtoj" path="res://assets/Background/Brown.png" id="2_kdaql"]
-[ext_resource type="Texture2D" uid="uid://cnbu7x3lh0uy4" path="res://assets/Background/Pink.png" id="2_rlftm"]
-[ext_resource type="Texture2D" uid="uid://dxfgb658s3t1x" path="res://assets/Background/Yellow.png" id="3_pvsc7"]
+[ext_resource type="Texture2D" uid="uid://fybkjp6koeak" path="res://assets/Background/Brown.png" id="2_kdaql"]
+[ext_resource type="Texture2D" uid="uid://cmkveggkldcoo" path="res://assets/Background/Pink.png" id="2_rlftm"]
+[ext_resource type="Texture2D" uid="uid://cegm4jrqsdsth" path="res://assets/Background/Yellow.png" id="3_pvsc7"]
 [ext_resource type="PackedScene" uid="uid://bbamo5amixx4v" path="res://scenes/items/HatSelection/ChoosingHats.tscn" id="4_whxca"]
 
 [sub_resource type="GDScript" id="GDScript_is18v"]
@@ -23,8 +23,7 @@ func _on_next_level_button_pressed():
 		elif (Global.level ==2):
 			get_tree().change_scene_to_file(\"res://scenes/levels/level_2/dashlvl.tscn\")
 		elif Global.level ==3:
-			pass
-			#get_tree().change_scene_to_packed(next_level)
+			get_tree().change_scene_to_file(\"res://scenes/levels/level_3/bosslvl.tscn\")
 
 
 func _on_main_menu_button_pressed():

@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://u7pstnw6eh7y"]
+[gd_scene load_steps=8 format=3 uid="uid://u7pstnw6eh7y"]
 
 [ext_resource type="Script" path="res://scenes/items/breakablefloors/breakingwall.gd" id="1_5sdmw"]
-[ext_resource type="Texture2D" uid="uid://d0sd7asyy40dl" path="res://assets/breakables image/elementWood047.png" id="2_5ghog"]
-[ext_resource type="Texture2D" uid="uid://xnq5dihpt7d8" path="res://assets/breakables image/breakparticles.png" id="3_g4nq8"]
-[ext_resource type="AudioStream" uid="uid://brmnphn1qa8g3" path="res://sounds/wood-crate-destory-2-97263.mp3" id="4_x8bw2"]
+[ext_resource type="Texture2D" uid="uid://cn8urwaik0w2p" path="res://assets/breakables image/elementWood047.png" id="2_5ghog"]
+[ext_resource type="Texture2D" uid="uid://bd2ce6ta13p5v" path="res://assets/breakables image/breakparticles.png" id="3_g4nq8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gnyy5"]
 radius = 34.5
@@ -26,7 +25,7 @@ initial_velocity_max = 200.0
 gravity = Vector3(0, 500, 0)
 anim_offset_max = 1.0
 
-[node name="BreakableWall5px" type="StaticBody2D"]
+[node name="Breakable floor 5px" type="StaticBody2D"]
 script = ExtResource("1_5sdmw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -58,9 +57,5 @@ process_material = SubResource("ParticleProcessMaterial_d3cln")
 texture = ExtResource("3_g4nq8")
 one_shot = true
 explosiveness = 1.0
-
-[node name="SoundBreaking" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_x8bw2")
-volume_db = -6.765
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

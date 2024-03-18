@@ -1,28 +1,21 @@
-[gd_scene load_steps=42 format=3 uid="uid://u062saf35tmu"]
+[gd_scene load_steps=43 format=3 uid="uid://u062saf35tmu"]
 
 [ext_resource type="Script" path="res://scenes/characters/player/player.gd" id="1_sh5fx"]
-<<<<<<< Updated upstream
-[ext_resource type="Texture2D" uid="uid://ch3cfgcgu60cf" path="res://assets/PuffelImages/Jump_32x32.png" id="5_akebq"]
-[ext_resource type="Texture2D" uid="uid://bujagb0rggg24" path="res://assets/PuffelImages/idle.PNG" id="6_b5ahm"]
-[ext_resource type="Texture2D" uid="uid://4saw8y1r5l76" path="res://assets/PuffelImages/Run_32x32.png" id="7_5t38n"]
-[ext_resource type="AudioStream" uid="uid://clgtba66gc7e8" path="res://sounds/cartoon-jump-6462.mp3" id="7_abv7t"]
-[ext_resource type="AudioStream" uid="uid://bnosjj0lgq4hr" path="res://sounds/little-whoosh-2-6301.mp3" id="8_mcy27"]
-[ext_resource type="AudioStream" uid="uid://dgk37qwi3daa7" path="res://sounds/whoosh-6316.mp3" id="9_c8ymi"]
-[ext_resource type="Texture2D" uid="uid://cf1nhu2uygrsj" path="res://assets/HatsImage/cowboy.png" id="9_q7cep"]
-[ext_resource type="AudioStream" uid="uid://cttv8evta5iaf" path="res://sounds/malegrunt3-99409.mp3" id="10_0ve0m"]
-[ext_resource type="Texture2D" uid="uid://b2wy66vafnlqy" path="res://assets/HatsImage/wizard.png" id="10_tegue"]
-[ext_resource type="Texture2D" uid="uid://cmeega6ettoq3" path="res://assets/HatsImage/berries.png" id="11_47b5h"]
-[ext_resource type="Texture2D" uid="uid://bimyldou5s835" path="res://assets/HatsImage/flowerpot.png" id="11_h7o0t"]
-[ext_resource type="Texture2D" uid="uid://c18mi2xybjqsq" path="res://assets/HatsImage/mask.png" id="12_b2eov"]
-[ext_resource type="Texture2D" uid="uid://b7ihqovr4d2nq" path="res://assets/HatsImage/candles.png" id="12_mfxy8"]
-[ext_resource type="Texture2D" uid="uid://byac51cbqc2e1" path="res://assets/HatsImage/viking.png" id="13_by181"]
-=======
-[ext_resource type="Texture2D" uid="uid://beavk38tj1jgi" path="res://assets/PuffelImages/Jump_32x32.png" id="5_akebq"]
-[ext_resource type="Texture2D" uid="uid://dy3q8k0x4k4uq" path="res://assets/PuffelImages/idle.PNG" id="6_b5ahm"]
-[ext_resource type="Texture2D" uid="uid://crdprrhsxt51p" path="res://assets/PuffelImages/Run_32x32.png" id="7_5t38n"]
-[ext_resource type="Texture2D" uid="uid://bdapyw1twcqbc" path="res://assets/HatsImage/cowboy.png" id="9_q7cep"]
-[ext_resource type="Texture2D" uid="uid://cy1fbocnx6s75" path="res://assets/HatsImage/wizard.png" id="10_tegue"]
->>>>>>> Stashed changes
+[ext_resource type="Texture2D" uid="uid://cy3jsji4k6qxj" path="res://assets/PuffelImages/Jump_32x32.png" id="5_akebq"]
+[ext_resource type="Texture2D" uid="uid://d308f15yffag2" path="res://assets/PuffelImages/idle.PNG" id="6_b5ahm"]
+[ext_resource type="Texture2D" uid="uid://retenpeok06b" path="res://assets/PuffelImages/Run_32x32.png" id="7_5t38n"]
+[ext_resource type="AudioStream" uid="uid://cpq3wjx5tblhl" path="res://sounds/cartoon-jump-6462.mp3" id="7_abv7t"]
+[ext_resource type="AudioStream" uid="uid://bhrpek68ukfv7" path="res://sounds/little-whoosh-2-6301.mp3" id="8_mcy27"]
+[ext_resource type="AudioStream" uid="uid://bemtfdm1c8uce" path="res://sounds/whoosh-6316.mp3" id="9_c8ymi"]
+[ext_resource type="Texture2D" uid="uid://dgcvkan0illg8" path="res://assets/HatsImage/cowboy.png" id="9_q7cep"]
+[ext_resource type="AudioStream" uid="uid://bogqwu7qvwa3s" path="res://sounds/malegrunt3-99409.mp3" id="10_0ve0m"]
+[ext_resource type="Texture2D" uid="uid://bs3cd0g7qileb" path="res://assets/HatsImage/wizard.png" id="10_tegue"]
+[ext_resource type="Texture2D" uid="uid://b5hgrg4k3y8t0" path="res://assets/HatsImage/berries.png" id="11_47b5h"]
+[ext_resource type="Texture2D" uid="uid://dk43rj7wmbr34" path="res://assets/HatsImage/flowerpot.png" id="11_h7o0t"]
+[ext_resource type="Texture2D" uid="uid://xyxn7lcjh8sy" path="res://assets/HatsImage/mask.png" id="12_b2eov"]
+[ext_resource type="Texture2D" uid="uid://cp4rvbx5a0l3u" path="res://assets/HatsImage/candles.png" id="12_mfxy8"]
+[ext_resource type="Texture2D" uid="uid://dppotun7kf206" path="res://assets/HatsImage/viking.png" id="13_by181"]
+[ext_resource type="Script" path="res://scenes/characters/player/Camera2D.gd" id="16_lnmhj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q6bfs"]
 atlas = ExtResource("6_b5ahm")
@@ -242,8 +235,6 @@ wait_time = 0.09
 [node name="DashCooldown" type="Timer" parent="."]
 wait_time = 3.0
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="SoundJump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_abv7t")
 
@@ -300,6 +291,9 @@ visible = false
 position = Vector2(-18.6667, 10.6667)
 scale = Vector2(0.0530865, 0.0820988)
 texture = ExtResource("12_mfxy8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("16_lnmhj")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

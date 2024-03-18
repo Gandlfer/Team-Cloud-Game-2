@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://cwiduqjmarcp1"]
 
-[ext_resource type="Texture2D" uid="uid://bqqxtpnra2jjv" path="res://assets/Background/Gray.png" id="1_0pjfl"]
+[ext_resource type="Texture2D" uid="uid://de5h34jicdhis" path="res://assets/Background/Gray.png" id="1_0pjfl"]
 [ext_resource type="PackedScene" uid="uid://u062saf35tmu" path="res://scenes/characters/player/player.tscn" id="2_6u7uq"]
-[ext_resource type="Texture2D" uid="uid://1perxfocfgal" path="res://assets/Terrain (16x16).png" id="2_svfkk"]
-[ext_resource type="Texture2D" uid="uid://15dskrm0fqoh" path="res://assets/BigGun.webp" id="3_bcxts"]
-[ext_resource type="Script" path="res://scenes/levels/3_boss_level/Camera2D.gd" id="4_emk12"]
+[ext_resource type="Texture2D" uid="uid://bkq6ppvbc1bcp" path="res://assets/Terrain (16x16).png" id="2_svfkk"]
+[ext_resource type="Texture2D" uid="uid://dwd6k31qabvsp" path="res://assets/BigGun.webp" id="3_bcxts"]
 [ext_resource type="Script" path="res://scenes/items/gun/Gun.gd" id="4_hxixd"]
-[ext_resource type="PackedScene" uid="uid://cjm6e77hhavty" path="res://scenes/levels/3_boss_level/boss.tscn" id="6_g8txt"]
+[ext_resource type="Script" path="res://scenes/characters/player/playerbosslvl.gd" id="4_w0jb5"]
+[ext_resource type="PackedScene" uid="uid://cjm6e77hhavty" path="res://scenes/levels/level_3/boss.tscn" id="6_g8txt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82jjl"]
 texture = ExtResource("2_svfkk")
@@ -621,23 +621,13 @@ layer_0/tile_data = PackedInt32Array(262147, 65536, 0, 262148, 65536, 0, 262149,
 [node name="Puffel" parent="." instance=ExtResource("2_6u7uq")]
 texture_filter = 1
 position = Vector2(87, 130)
-collision_layer = 2
 collision_mask = 21
+script = ExtResource("4_w0jb5")
 
-[node name="Camera2D" type="Camera2D" parent="Puffel"]
-scale = Vector2(0.75, 0.75)
-zoom = Vector2(0.75, 0.75)
-limit_left = -288
-limit_top = -280
-limit_right = 3984
-limit_bottom = 3450
-editor_draw_limits = true
-script = ExtResource("4_emk12")
-
-[node name="DashTimer" type="Timer" parent="Puffel"]
+[node name="DashTimer2" type="Timer" parent="Puffel"]
 wait_time = 0.09
 
-[node name="DashCooldown" type="Timer" parent="Puffel"]
+[node name="DashCooldown2" type="Timer" parent="Puffel"]
 wait_time = 0.2
 
 [node name="Gun" type="Sprite2D" parent="Puffel"]
@@ -653,5 +643,5 @@ position = Vector2(40, -6)
 position = Vector2(3258, 2868)
 scale = Vector2(1.5, 1.5)
 
-[connection signal="timeout" from="Puffel/DashTimer" to="Puffel" method="_on_dash_timer_timeout"]
-[connection signal="timeout" from="Puffel/DashCooldown" to="Puffel" method="_on_dash_cooldown_timeout"]
+[connection signal="timeout" from="Puffel/DashTimer2" to="Puffel" method="_on_dash_timer_2_timeout"]
+[connection signal="timeout" from="Puffel/DashCooldown2" to="Puffel" method="_on_dash_cooldown_2_timeout"]

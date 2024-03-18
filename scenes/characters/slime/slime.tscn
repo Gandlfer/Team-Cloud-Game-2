@@ -1,8 +1,8 @@
 [gd_scene load_steps=20 format=3 uid="uid://dmnuchgorjev5"]
 
 [ext_resource type="Script" path="res://scenes/characters/slime/slime.gd" id="1_c8h1t"]
-[ext_resource type="Texture2D" uid="uid://702k07a1q7lr" path="res://assets/enemies/Red Slime Spritesheet.png" id="1_vy5s3"]
-[ext_resource type="AudioStream" uid="uid://ysvswpko71mn" path="res://sounds/sfx_gross-guts-slime-goo-33112.mp3" id="3_bcnxt"]
+[ext_resource type="Texture2D" uid="uid://ktf6b1qaf3py" path="res://assets/enemies/Red Slime Spritesheet.png" id="1_vy5s3"]
+[ext_resource type="AudioStream" uid="uid://1fh7r6v4spnt" path="res://sounds/sfx_gross-guts-slime-goo-33112.mp3" id="3_bcnxt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qehjw"]
 atlas = ExtResource("1_vy5s3")
@@ -120,7 +120,6 @@ height = 28.0
 scale = Vector2(4, 4)
 collision_layer = 4
 script = ExtResource("1_c8h1t")
-speed = 2000
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tclx7")

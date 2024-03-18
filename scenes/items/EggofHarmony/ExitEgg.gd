@@ -14,7 +14,7 @@ func _ready():
 		Global.Ability_Unlocked="Magnum Gun"
 		Global.Ability_Description="Press L to shoot bullets"
 		Global.level=3
-	elif get_parent().name == "Bosslevel":
+	elif get_parent().name == "BossLevel":
 		Global.level=0
 	$"../Transition".visible=true
 	$"../Transition".transitionToNormal()

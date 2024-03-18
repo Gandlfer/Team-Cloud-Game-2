@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://cgnqlxirfrwdw"]
+[gd_scene load_steps=18 format=3 uid="uid://cgnqlxirfrwdw"]
 
-[ext_resource type="Texture2D" uid="uid://dexuylq61ytqh" path="res://assets/Background/Green.png" id="1_16css"]
-[ext_resource type="Texture2D" uid="uid://dix7ci51fwjlj" path="res://assets/Terrain (16x16).png" id="2_ddulu"]
+[ext_resource type="Texture2D" uid="uid://va7q31wbcfbg" path="res://assets/Background/Green.png" id="1_16css"]
+[ext_resource type="Script" path="res://scenes/levels/level_2/dashlvl.gd" id="1_nspad"]
+[ext_resource type="Texture2D" uid="uid://2mtwvad1v5qm" path="res://assets/Terrain (16x16).png" id="2_ddulu"]
 [ext_resource type="PackedScene" uid="uid://bjgas28ytv7k" path="res://scenes/characters/player/player_spawner.tscn" id="3_cww7j"]
 [ext_resource type="PackedScene" uid="uid://cksexruq2ieme" path="res://scenes/items/EggofHarmony/ExitEgg.tscn" id="6_e1315"]
 [ext_resource type="PackedScene" uid="uid://480728mi3flq" path="res://scenes/items/Spike/Upward Spike.tscn" id="7_4k6nd"]
@@ -13,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dblo0dag0t15i" path="res://scenes/items/Hats/Viking.tscn" id="11_v48ee"]
 [ext_resource type="PackedScene" uid="uid://ghbltn2cidpa" path="res://scenes/items/Hats/Mask.tscn" id="12_7obm3"]
 [ext_resource type="PackedScene" uid="uid://dmnuchgorjev5" path="res://scenes/characters/slime/slime.tscn" id="14_fwvky"]
+[ext_resource type="AudioStream" uid="uid://b7b13dt3n6phh" path="res://sounds/DashLevel.mp3" id="15_dexfy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82jjl"]
 texture = ExtResource("2_ddulu")
@@ -587,6 +589,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_82jjl")
 
 [node name="Node" type="Node"]
+script = ExtResource("1_nspad")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
@@ -603,7 +606,6 @@ texture = ExtResource("1_16css")
 stretch_mode = 1
 
 [node name="Transition" parent="." instance=ExtResource("10_1jh27")]
-visible = false
 
 [node name="PlayerSpawner" parent="." instance=ExtResource("3_cww7j")]
 process_priority = 1
@@ -681,3 +683,6 @@ position = Vector2(2158, -1362)
 
 [node name="Slime3" parent="." instance=ExtResource("14_fwvky")]
 position = Vector2(2620, 128)
+
+[node name="BgMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_dexfy")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhbcge80lfgy1"]
+
+[ext_resource type="Texture2D" uid="uid://docsd0d8jwrt4" path="res://assets/healthbar_back.png" id="1_vvsiy"]
+[ext_resource type="Texture2D" uid="uid://ehnuudayru75" path="res://assets/healthbar_border.png" id="2_u2kyf"]
+[ext_resource type="Texture2D" uid="uid://n86juybgp7bp" path="res://assets/healthbar_bar.png" id="3_x6rbn"]
+
+[node name="BossHealthbar" type="TextureProgressBar"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 100.0
+texture_under = ExtResource("1_vvsiy")
+texture_over = ExtResource("2_u2kyf")
+texture_progress = ExtResource("3_x6rbn")

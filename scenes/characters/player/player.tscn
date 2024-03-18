@@ -1,6 +1,7 @@
 [gd_scene load_steps=42 format=3 uid="uid://u062saf35tmu"]
 
 [ext_resource type="Script" path="res://scenes/characters/player/player.gd" id="1_sh5fx"]
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://ch3cfgcgu60cf" path="res://assets/PuffelImages/Jump_32x32.png" id="5_akebq"]
 [ext_resource type="Texture2D" uid="uid://bujagb0rggg24" path="res://assets/PuffelImages/idle.PNG" id="6_b5ahm"]
 [ext_resource type="Texture2D" uid="uid://4saw8y1r5l76" path="res://assets/PuffelImages/Run_32x32.png" id="7_5t38n"]
@@ -15,6 +16,13 @@
 [ext_resource type="Texture2D" uid="uid://c18mi2xybjqsq" path="res://assets/HatsImage/mask.png" id="12_b2eov"]
 [ext_resource type="Texture2D" uid="uid://b7ihqovr4d2nq" path="res://assets/HatsImage/candles.png" id="12_mfxy8"]
 [ext_resource type="Texture2D" uid="uid://byac51cbqc2e1" path="res://assets/HatsImage/viking.png" id="13_by181"]
+=======
+[ext_resource type="Texture2D" uid="uid://beavk38tj1jgi" path="res://assets/PuffelImages/Jump_32x32.png" id="5_akebq"]
+[ext_resource type="Texture2D" uid="uid://dy3q8k0x4k4uq" path="res://assets/PuffelImages/idle.PNG" id="6_b5ahm"]
+[ext_resource type="Texture2D" uid="uid://crdprrhsxt51p" path="res://assets/PuffelImages/Run_32x32.png" id="7_5t38n"]
+[ext_resource type="Texture2D" uid="uid://bdapyw1twcqbc" path="res://assets/HatsImage/cowboy.png" id="9_q7cep"]
+[ext_resource type="Texture2D" uid="uid://cy1fbocnx6s75" path="res://assets/HatsImage/wizard.png" id="10_tegue"]
+>>>>>>> Stashed changes
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q6bfs"]
 atlas = ExtResource("6_b5ahm")

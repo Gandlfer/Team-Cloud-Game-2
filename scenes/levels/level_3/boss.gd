@@ -16,12 +16,15 @@ var secondDash = false
 
 var a
 
+signal egg
+
 @warning_ignore("shadowed_variable")
 func damage(b):
 	b.get_parent().queue_free()
 	$BossHealthbar.value -= 5
 	if $BossHealthbar.value <= 0:
 		queue_free()
+		emit_signal("egg")
 
 func _on_area_2d_area_entered(area):
 	if 'Bullet' in area.get_parent().name:

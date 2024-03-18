@@ -16,4 +16,5 @@ func _process(delta):
 			zoom = zoom.move_toward(Vector2(0.5, 0.5), 0.0005)
 			limit_left = 1152
 			limit_right = 3984
+			limit_bottom = 3600
 			# position = position.move_toward(Vector2(30, 2500), 2)

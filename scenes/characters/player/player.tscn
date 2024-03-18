@@ -298,6 +298,7 @@ texture = ExtResource("12_mfxy8")
 script = ExtResource("16_lnmhj")
 
 [node name="Gun" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(25, 0)
 scale = Vector2(0.02, 0.02)
 texture = ExtResource("17_llgqr")

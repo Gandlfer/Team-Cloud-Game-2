@@ -1,11 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwiduqjmarcp1"]
+[gd_scene load_steps=14 format=3 uid="uid://cwiduqjmarcp1"]
 
 [ext_resource type="Texture2D" uid="uid://de5h34jicdhis" path="res://assets/Background/Gray.png" id="1_0pjfl"]
+[ext_resource type="Script" path="res://scenes/levels/level_3/bosslvl.gd" id="1_sf5c6"]
+[ext_resource type="PackedScene" uid="uid://cksexruq2ieme" path="res://scenes/items/EggofHarmony/ExitEgg.tscn" id="2_prk67"]
 [ext_resource type="Texture2D" uid="uid://bkq6ppvbc1bcp" path="res://assets/Terrain (16x16).png" id="2_svfkk"]
 [ext_resource type="PackedScene" uid="uid://bjgas28ytv7k" path="res://scenes/characters/player/player_spawner.tscn" id="4_how2m"]
 [ext_resource type="Texture2D" uid="uid://r3452348ldur" path="res://assets/exclamation_mark.png" id="4_wmr0l"]
 [ext_resource type="PackedScene" uid="uid://c1gxc8yqsxgl1" path="res://scenes/ui/game_screen/game_screen.tscn" id="5_25rkk"]
+[ext_resource type="PackedScene" uid="uid://480728mi3flq" path="res://scenes/items/Spike/Upward Spike.tscn" id="6_1qwsl"]
 [ext_resource type="PackedScene" uid="uid://cjm6e77hhavty" path="res://scenes/levels/level_3/boss.tscn" id="6_g8txt"]
+[ext_resource type="PackedScene" uid="uid://j6g8m4fklwjd" path="res://scenes/ui/Transitions/Transition.tscn" id="9_milfs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82jjl"]
 texture = ExtResource("2_svfkk")
@@ -604,12 +608,13 @@ sources/0 = SubResource("TileSetAtlasSource_82jjl")
 size = Vector2(112.667, 116.667)
 
 [node name="BossLevel" type="Node2D"]
+script = ExtResource("1_sf5c6")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -1292.0
-offset_top = -2139.0
-offset_right = 5465.0
-offset_bottom = 4943.0
+offset_left = -248.0
+offset_top = -1620.0
+offset_right = 6509.0
+offset_bottom = 5462.0
 texture = ExtResource("1_0pjfl")
 stretch_mode = 1
 
@@ -655,4 +660,19 @@ position = Vector2(-4, 114)
 
 [node name="GameScreen" parent="." instance=ExtResource("5_25rkk")]
 
+[node name="Upward Spike" parent="." instance=ExtResource("6_1qwsl")]
+position = Vector2(-1455, 5818)
+scale = Vector2(130, 130)
+
+[node name="Upward Spike2" parent="." instance=ExtResource("6_1qwsl")]
+position = Vector2(7040, 5822)
+scale = Vector2(130, 130)
+
+[node name="Egg and Exit" parent="." instance=ExtResource("2_prk67")]
+visible = false
+position = Vector2(2580, 2766)
+
+[node name="Transition" parent="." instance=ExtResource("9_milfs")]
+
+[connection signal="egg" from="Boss" to="." method="_on_boss_egg"]
 [connection signal="body_entered" from="Boss/Area2D" to="Boss" method="_on_area_2d_body_entered"]

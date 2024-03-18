@@ -49,7 +49,8 @@ func _ready():
 	elif get_parent().name == "BossLevel":
 		dash = true
 		gun = true
-	pass
+	
+	$Gun.visible = gun
 
 func shoot(isLeft):
 	b = bullet.instantiate()
@@ -178,17 +179,6 @@ func flicker():
 	#print("Done")
 	damaged = false
 	isDamage=false
-
-func _gun_shoot_down():
-	velocity.y -= GUN_VELOCITY
-func _gun_shoot_up():
-	velocity.y += GUN_VELOCITY
-func _gun_shoot_left():
-	print("left sig recieved")
-	velocity.x -= GUN_VELOCITY
-func _gun_shoot_right():
-	print("right sig recieved")
-	velocity.x += GUN_VELOCITY
 
 func save():
 	var file = FileAccess.open(save_path,FileAccess.WRITE)

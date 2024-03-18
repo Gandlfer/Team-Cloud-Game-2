@@ -1,8 +1,8 @@
 [gd_scene load_steps=18 format=3 uid="uid://cgnqlxirfrwdw"]
 
-[ext_resource type="Texture2D" uid="uid://dildr3lxu3qvb" path="res://assets/Background/Green.png" id="1_16css"]
+[ext_resource type="Texture2D" uid="uid://b76ej6y8tvfq5" path="res://assets/Background/Green.png" id="1_16css"]
 [ext_resource type="Script" path="res://scenes/levels/level_2/dashlvl.gd" id="1_nspad"]
-[ext_resource type="Texture2D" uid="uid://c142geb1qxq17" path="res://assets/Terrain (16x16).png" id="2_ddulu"]
+[ext_resource type="Texture2D" uid="uid://bkq6ppvbc1bcp" path="res://assets/Terrain (16x16).png" id="2_ddulu"]
 [ext_resource type="PackedScene" uid="uid://bjgas28ytv7k" path="res://scenes/characters/player/player_spawner.tscn" id="3_cww7j"]
 [ext_resource type="PackedScene" uid="uid://cksexruq2ieme" path="res://scenes/items/EggofHarmony/ExitEgg.tscn" id="6_e1315"]
 [ext_resource type="PackedScene" uid="uid://480728mi3flq" path="res://scenes/items/Spike/Upward Spike.tscn" id="7_4k6nd"]
@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ghbltn2cidpa" path="res://scenes/items/Hats/Mask.tscn" id="12_7obm3"]
 [ext_resource type="PackedScene" uid="uid://dmnuchgorjev5" path="res://scenes/characters/slime/slime.tscn" id="14_fwvky"]
 [ext_resource type="PackedScene" uid="uid://u7pstnw6eh7y" path="res://scenes/items/breakablefloors/breakable_wall_5px.tscn" id="15_70uvx"]
-[ext_resource type="AudioStream" uid="uid://drwruaw74ybr4" path="res://sounds/DashLevel.mp3" id="15_dexfy"]
+[ext_resource type="AudioStream" uid="uid://bryhrnk386t2j" path="res://sounds/DashLevel.mp3" id="15_dexfy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82jjl"]
 texture = ExtResource("2_ddulu")

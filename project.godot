@@ -18,6 +18,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 HealthManager="*res://scripts/health_manager.gd"
+Global="*res://Global.gd"
 
 [editor]
 

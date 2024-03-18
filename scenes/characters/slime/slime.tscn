@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/characters/slime/slime.gd" id="1_c8h1t"]
 [ext_resource type="Texture2D" uid="uid://ktf6b1qaf3py" path="res://assets/enemies/Red Slime Spritesheet.png" id="1_vy5s3"]
-[ext_resource type="AudioStream" path="res://sounds/sfx_gross-guts-slime-goo-33112.mp3" id="3_bcnxt"]
+[ext_resource type="AudioStream" uid="uid://1fh7r6v4spnt" path="res://sounds/sfx_gross-guts-slime-goo-33112.mp3" id="3_bcnxt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qehjw"]
 atlas = ExtResource("1_vy5s3")

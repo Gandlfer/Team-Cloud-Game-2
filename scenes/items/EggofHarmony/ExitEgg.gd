@@ -20,6 +20,7 @@ func _on_area_2d_body_entered(body):
 	
 	if body.is_in_group("Player"): 
 		# unlock powers
+		$SoundTwinkle.play()
 		print("Next Scene")
 		$Area2D.queue_free()
 		$AnimatedSprite2D.queue_free()

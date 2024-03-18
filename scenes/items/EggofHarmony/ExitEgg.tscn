@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cksexruq2ieme"]
+[gd_scene load_steps=10 format=3 uid="uid://cksexruq2ieme"]
 
 [ext_resource type="Script" path="res://scenes/items/EggofHarmony/ExitEgg.gd" id="1_jfvak"]
-[ext_resource type="Texture2D" uid="uid://cxr6cjbv5kfo0" path="res://assets/Egg_Ani_32x32.png" id="2_do5l4"]
+[ext_resource type="Texture2D" uid="uid://dias7gwu0w52e" path="res://assets/Egg_Ani_32x32.png" id="2_do5l4"]
+[ext_resource type="AudioStream" uid="uid://c1xngdhf35tc1" path="res://sounds/sound-effect-twinklesparkle-115095.mp3" id="3_vitj7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0bs5c"]
 radius = 32.0
@@ -59,5 +60,9 @@ sprite_frames = SubResource("SpriteFrames_ulkpf")
 animation = &"EggAnimation"
 autoplay = "EggAnimation"
 frame_progress = 0.0484584
+
+[node name="SoundTwinkle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vitj7")
+volume_db = 8.667
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

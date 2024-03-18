@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbaksqp8o1ng4"]
+[gd_scene load_steps=9 format=3 uid="uid://bbaksqp8o1ng4"]
 
 [ext_resource type="Script" path="res://scenes/items/breakablefloors/breakingscript.gd" id="1_afo6g"]
-[ext_resource type="Texture2D" uid="uid://dkrhsfpks1u0t" path="res://assets/breakables image/elementWood046.png" id="2_d4n5q"]
-[ext_resource type="Texture2D" uid="uid://dtkkpbto3wack" path="res://assets/breakables image/breakparticles.png" id="3_tmtnm"]
+[ext_resource type="Texture2D" uid="uid://dh7fb5aeomqje" path="res://assets/breakables image/elementWood046.png" id="2_d4n5q"]
+[ext_resource type="Texture2D" uid="uid://dvrindnd2qg55" path="res://assets/breakables image/breakparticles.png" id="3_tmtnm"]
+[ext_resource type="AudioStream" uid="uid://depb7eq8llpyd" path="res://sounds/wood-crate-destory-2-97263.mp3" id="4_jfm5t"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_isvyf"]
 radius = 32.5
@@ -51,5 +52,9 @@ process_material = SubResource("ParticleProcessMaterial_d3cln")
 texture = ExtResource("3_tmtnm")
 one_shot = true
 explosiveness = 1.0
+
+[node name="SoundBreak" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jfm5t")
+volume_db = -7.425
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

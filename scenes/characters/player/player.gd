@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 @onready var sprite_2d = $Sprite2D
-var save_path="res://Saved//data.json"
-
+#var save_path="res://Saved//data.json"
+var save_path="user://data.json"
 # @onready var gunSignal = get_node("Gun")
 
 const SPEED = 600.0
@@ -192,6 +192,7 @@ func load_data():
 	if FileAccess.file_exists(save_path):
 		var file =FileAccess.open(save_path,FileAccess.READ)
 		hats = str_to_var(file.get_as_text())
+		print(hats)
 		file.close()
 	else:
 		print("No saved.")
@@ -201,13 +202,14 @@ func _on_left_pressed():
 		if currenthat==-1:
 			currenthat=hats.size()-1
 		else:
-			get_node(hatNode % currenthat).visible=false
+			get_node(hatNode % hats[currenthat]).visible=false
 			if currenthat==0:
 				currenthat=hats.size()-1
 			else:
 				currenthat-=1
-		get_node(hatNode % currenthat).visible=true
-		Global.hat=hatNode % currenthat
+		get_node(hatNode % hats[currenthat]).visible=true
+		Global.hat=hatNode % hats[currenthat]
+		print(Global.hat)
 
 
 func _on_right_pressed():
@@ -215,13 +217,14 @@ func _on_right_pressed():
 		if currenthat==-1:
 			currenthat=0
 		else:
-			get_node(hatNode % currenthat).visible=false
+			get_node(hatNode % hats[currenthat]).visible=false
 			if currenthat==hats.size()-1:
 				currenthat=0
 			else:
 				currenthat+=1
-		get_node(hatNode % currenthat).visible=true
-		Global.hat=hatNode % currenthat
+		get_node(hatNode % hats[currenthat]).visible=true
+		Global.hat=hatNode % hats[currenthat]
+		print(Global.hat)
 		
 func get_jump_damage_amount():
 	return JUMP_DAMAGE

@@ -1,7 +1,8 @@
 extends StaticBody2D
 
 var hats=[]
-var save_path="res://Saved//data.json"
+#var save_path="res://Saved//data.json"
+var save_path = "user://data.json"
 var num= -1
 # Called when the node enters the scene tree for the first time.
 func _ready():

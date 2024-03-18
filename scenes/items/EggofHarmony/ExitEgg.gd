@@ -26,5 +26,9 @@ func _on_area_2d_body_entered(body):
 		$"../Player".set_physics_process(false)
 		$"../Transition".transitionToBlack()
 		await get_tree().create_timer(0.5).timeout
-		get_tree().change_scene_to_packed(target_level)
+		$"../Player/Camera2D".enabled=false
+		$"../Transition".visible=false
+		$"../Level Done".visible = true
+		$"../Level Done/Camera2D".enabled = true
+		#get_tree().change_scene_to_packed(target_level)
 

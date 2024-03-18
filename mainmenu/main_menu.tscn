@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://iefhk84hciax"]
+[gd_scene load_steps=11 format=3 uid="uid://iefhk84hciax"]
 
 [ext_resource type="Script" path="res://mainmenu/main_menu.gd" id="1_cv5ac"]
-[ext_resource type="Texture2D" uid="uid://dqle3n3042x7t" path="res://assets/Background/Pink.png" id="2_0s078"]
-[ext_resource type="Texture2D" uid="uid://dr1bfbcdmryxe" path="res://mainmenu/logo.png" id="3_p7lsg"]
-[ext_resource type="Texture2D" uid="uid://dntsuqjek82yr" path="res://mainmenu/puffel_32x_32.png" id="4_l2dxo"]
-[ext_resource type="Texture2D" uid="uid://defb3thgsjydm" path="res://assets/Terrain (16x16).png" id="5_33o8o"]
-[ext_resource type="AudioStream" uid="uid://d24ivn0aqp6te" path="res://sounds/select-sound-121244.mp3" id="6_ye61o"]
+[ext_resource type="Texture2D" uid="uid://cnbu7x3lh0uy4" path="res://assets/Background/Pink.png" id="2_0s078"]
+[ext_resource type="Texture2D" uid="uid://c6lpfg2b7yu4v" path="res://mainmenu/logo.png" id="3_p7lsg"]
+[ext_resource type="Texture2D" uid="uid://ca3mdpd5vhavt" path="res://mainmenu/puffel_32x_32.png" id="4_l2dxo"]
+[ext_resource type="Texture2D" uid="uid://dix7ci51fwjlj" path="res://assets/Terrain (16x16).png" id="5_33o8o"]
+[ext_resource type="AudioStream" uid="uid://dpixew0643mwy" path="res://sounds/select-sound-121244.mp3" id="6_ye61o"]
+[ext_resource type="PackedScene" uid="uid://bbamo5amixx4v" path="res://scenes/items/HatSelection/ChoosingHats.tscn" id="7_xqpga"]
 
 [sub_resource type="Theme" id="Theme_a1gx5"]
 
@@ -176,10 +177,10 @@ stretch_mode = 1
 anchors_preset = -1
 anchor_left = 0.007
 anchor_right = 0.007
-offset_left = 278.936
-offset_top = 331.0
-offset_right = 467.936
-offset_bottom = 412.0
+offset_left = 215.936
+offset_top = 336.0
+offset_right = 404.936
+offset_bottom = 417.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
@@ -187,6 +188,7 @@ text = "Start
 "
 
 [node name="customization" type="Button" parent="."]
+visible = false
 anchors_preset = -1
 anchor_left = 0.007
 anchor_right = 0.007
@@ -206,7 +208,7 @@ offset_bottom = 40.0
 size_flags_vertical = 8
 
 [node name="Logo" type="Sprite2D" parent="TextureRect"]
-position = Vector2(586, 240)
+position = Vector2(584, 152)
 texture = ExtResource("3_p7lsg")
 
 [node name="Puffel" type="TextureRect" parent="."]
@@ -225,6 +227,9 @@ layer_0/tile_data = PackedInt32Array(2621437, 393216, 9, 2686973, 393216, 10, 26
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_ye61o")
+
+[node name="ChoosingHats" parent="." instance=ExtResource("7_xqpga")]
+position = Vector2(808, 416)
 
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="customization" to="." method="_on_customization_pressed"]

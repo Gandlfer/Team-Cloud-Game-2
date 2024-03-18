@@ -8,6 +8,7 @@ var save_path=\"res://Saved\"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$StaticBody2D/CharacterBody2D/Camera2D.enabled=false
 	pass # Replace with function body.
 
 
@@ -50,8 +51,6 @@ polygon = PackedVector2Array(256, 320, 288, 288, 256, 256)
 
 [node name="CharacterBody2D" parent="StaticBody2D" instance=ExtResource("1_yhhdl")]
 position = Vector2(-8, -8)
-
-[node name="Camera2D" type="Camera2D" parent="StaticBody2D/CharacterBody2D"]
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-8, -136)

@@ -47,8 +47,9 @@ func _on_area_2d_body_entered(body):
 		await get_tree().create_timer(0.5).timeout
 		# unlock powers
 		print("Next Scene")
-		$Area2D.queue_free()
-		$AnimatedSprite2D.queue_free()
+		#queue_free()
+		#$Area2D.queue_free()
+		#$AnimatedSprite2D.queue_free()
 		$"../Player".set_physics_process(false)
 		$"../Transition".transitionToBlack()
 		await get_tree().create_timer(0.5).timeout
@@ -61,3 +62,5 @@ func _on_area_2d_body_entered(body):
 			get_tree().change_scene_to_file("res://Level Done/level_done.tscn")
 		else:
 			get_tree().change_scene_to_file("res://scenes/winscreen.tscn")
+		
+		

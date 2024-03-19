@@ -59,7 +59,7 @@ func shoot(isLeft):
 	b.global_position = $Marker2D.global_position
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_just_pressed("shoot") && gun == true:
 		$SoundShoot.play()
 		shoot(isLeft)
 		

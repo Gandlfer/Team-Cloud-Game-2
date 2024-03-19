@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=3 uid="uid://iefhk84hciax"]
 
 [ext_resource type="Script" path="res://mainmenu/main_menu.gd" id="1_cv5ac"]
-[ext_resource type="Texture2D" uid="uid://dqle3n3042x7t" path="res://assets/Background/Pink.png" id="2_0s078"]
-[ext_resource type="Texture2D" uid="uid://dr1bfbcdmryxe" path="res://mainmenu/logo.png" id="3_p7lsg"]
-[ext_resource type="Texture2D" uid="uid://dntsuqjek82yr" path="res://mainmenu/puffel_32x_32.png" id="4_l2dxo"]
-[ext_resource type="Texture2D" uid="uid://defb3thgsjydm" path="res://assets/Terrain (16x16).png" id="5_33o8o"]
-[ext_resource type="AudioStream" uid="uid://d24ivn0aqp6te" path="res://sounds/select-sound-121244.mp3" id="6_ye61o"]
+[ext_resource type="Texture2D" uid="uid://cye6trhtvuiqi" path="res://assets/Background/Pink.png" id="2_0s078"]
+[ext_resource type="Texture2D" uid="uid://bpgdaex168s4v" path="res://mainmenu/logo.png" id="3_p7lsg"]
+[ext_resource type="Texture2D" uid="uid://lldy622y6qi0" path="res://mainmenu/puffel_32x_32.png" id="4_l2dxo"]
+[ext_resource type="Texture2D" uid="uid://c142geb1qxq17" path="res://assets/Terrain (16x16).png" id="5_33o8o"]
+[ext_resource type="AudioStream" uid="uid://bfebtmjtytur3" path="res://sounds/select-sound-121244.mp3" id="6_ye61o"]
 [ext_resource type="PackedScene" uid="uid://bbamo5amixx4v" path="res://scenes/items/HatSelection/ChoosingHats.tscn" id="7_xqpga"]
-[ext_resource type="AudioStream" uid="uid://curehy7reyihs" path="res://sounds/Title.mp3" id="8_8ruu1"]
+[ext_resource type="AudioStream" uid="uid://n4qpi60lqera" path="res://sounds/Title.mp3" id="8_8ruu1"]
 
 [sub_resource type="Theme" id="Theme_a1gx5"]
 
@@ -259,6 +259,7 @@ texture = SubResource("AtlasTexture_5aspe")
 expand_mode = 1
 
 [node name="Puffel" type="TextureRect" parent="Tiles"]
+layout_mode = 0
 offset_left = 73.0
 offset_top = -191.0
 offset_right = 821.0

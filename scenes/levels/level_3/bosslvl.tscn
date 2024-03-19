@@ -1,16 +1,16 @@
 [gd_scene load_steps=15 format=3 uid="uid://cwiduqjmarcp1"]
 
-[ext_resource type="Texture2D" uid="uid://de5h34jicdhis" path="res://assets/Background/Gray.png" id="1_0pjfl"]
+[ext_resource type="Texture2D" uid="uid://dgv54p6pnf4mn" path="res://assets/Background/Gray.png" id="1_0pjfl"]
 [ext_resource type="Script" path="res://scenes/levels/level_3/bosslvl.gd" id="1_sf5c6"]
 [ext_resource type="PackedScene" uid="uid://cksexruq2ieme" path="res://scenes/items/EggofHarmony/ExitEgg.tscn" id="2_prk67"]
-[ext_resource type="Texture2D" uid="uid://bkq6ppvbc1bcp" path="res://assets/Terrain (16x16).png" id="2_svfkk"]
+[ext_resource type="Texture2D" uid="uid://c142geb1qxq17" path="res://assets/Terrain (16x16).png" id="2_svfkk"]
 [ext_resource type="PackedScene" uid="uid://bjgas28ytv7k" path="res://scenes/characters/player/player_spawner.tscn" id="4_how2m"]
-[ext_resource type="Texture2D" uid="uid://r3452348ldur" path="res://assets/exclamation_mark.png" id="4_wmr0l"]
+[ext_resource type="Texture2D" uid="uid://vld6wu0qygun" path="res://assets/exclamation_mark.png" id="4_wmr0l"]
 [ext_resource type="PackedScene" uid="uid://c1gxc8yqsxgl1" path="res://scenes/ui/game_screen/game_screen.tscn" id="5_25rkk"]
 [ext_resource type="PackedScene" uid="uid://480728mi3flq" path="res://scenes/items/Spike/Upward Spike.tscn" id="6_1qwsl"]
 [ext_resource type="PackedScene" uid="uid://cjm6e77hhavty" path="res://scenes/levels/level_3/boss.tscn" id="6_g8txt"]
 [ext_resource type="PackedScene" uid="uid://j6g8m4fklwjd" path="res://scenes/ui/Transitions/Transition.tscn" id="9_milfs"]
-[ext_resource type="AudioStream" uid="uid://cr3uewjyl12cm" path="res://sounds/level3song.mp3" id="11_bt6v6"]
+[ext_resource type="AudioStream" uid="uid://tki63ohg46qv" path="res://sounds/level3song.mp3" id="11_bt6v6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82jjl"]
 texture = ExtResource("2_svfkk")
